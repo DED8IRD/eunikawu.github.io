@@ -1,0 +1,77 @@
+@import url(https://fonts.googleapis.com/css?family=Cabin);
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Cabin;
+}
+
+body {
+    position: relative;
+}
+
+// HERO 
+.hero {
+    display: flex;
+    background-image: url(http://dein-o-business.de/wp-content/uploads/2017/06/Fotolia_101558831_L.jpg);
+    height: 720px;
+    justify-content: center;
+    align-items: center;      
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+
+    .content {
+        .header {
+            h1 {
+                color: #fff;
+                font-size: 2.5em;
+            }
+        }
+    }    
+}
+
+// NAV
+.navbar {
+    margin-bottom: 0px;
+    border-radius: 0;  
+}
+
+.affix {
+    top: 0;
+    width: 100%;
+    z-index: 9999 !important;
+}
+
+// BODY
+.page-content {
+    width: 50em;
+    margin: auto;
+    line-height: 1.625;
+}
+
+// HOME
+
+// ABOUT ME
+
+// PORTFOLIO
+
+// EXPERIENCE
+
+// CONTACT
+.contact {
+  
+    .row {
+        text-align: center;
+    }
+    
+    .a {
+        font-size: 20pt;
+    }
+}
+
+// FOOTER
+.footer {
+    width: 100%;
+    padding: 30px 0;
+    text-align: center;
+}
