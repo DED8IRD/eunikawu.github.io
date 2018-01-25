@@ -1,13 +1,20 @@
+/*IMPORTS*/
 @import url(https://fonts.googleapis.com/css?family=Cabin);
+
+/*VARIABLES*/
+$font-stack: Cabin, 'Open sans', sans-serif;
+$primary-color: #EEE;
+$accent-color: salmon;
+
 body, html {
-    font-family: Cabin, 'Open sans', sans-serif;    
+    font-family: $font-stack;
 }
 
 body {
     position: relative;
 }
 
-// HERO 
+/*HERO*/
 .hero {
     display: flex;
     background: url(http://dein-o-business.de/wp-content/uploads/2017/06/Fotolia_101558831_L.jpg) no-repeat center center;
@@ -53,12 +60,39 @@ body {
     }    
 }
 
-// NAV
+/*NAV*/
 .navbar {
-    margin-bottom: 0px;
-    border-radius: 0;
+    background-color: RGBA(255,255,255,0.9);
+    border: none;
     letter-spacing: 2px;
     text-transform: uppercase; 
+    font-weight: bold;
+}
+
+/*Override navbar defaults*/
+.navbar-brand, .navbar-nav > li > a {
+    color: #777;
+}
+
+.navbar-brand:hover, 
+.navbar-brand:focus,
+.navbar-nav > li > a:hover {
+    color: $accent-color;
+    background-color: RGBA(255,255,255,0.9);
+}
+
+.navbar-nav > .active > a,
+.navbar-nav > .active > a:hover,
+.navbar-nav > .active > a:focus {
+    color: $accent-color;
+    background-color: RGBA(255,255,255,0.9);
+}
+
+.navbar-nav > .open > a,
+.navbar-nav > .open > a:hover,
+.navbar-nav > .open > a:focus {
+    color: $accent-color;
+    background-color: RGBA(255,255,255,0.9);
 }
 
 .affix {
@@ -67,7 +101,7 @@ body {
     z-index: 9999 !important;
 }
 
-// BODY
+/*BODY*/
 .page-content {
     margin: auto;
     padding: 0 5%;    
@@ -75,24 +109,23 @@ body {
 }
 
 h1 {
-    color: salmon;
+    color: $accent-color;
     font-size: 2.5em;
     text-transform: uppercase;
 }
 
 section {
     padding: 1em 10%;
-    // outline: #EEE dotted thick;
 }
 
-// HOME
+/*HOME*/
 #home {
     padding-top: 50px;
     
     #about-me {
         
         p {
-            padding-top: 100px;
+            padding-top: 75px;
         }
 
         #avatar {
@@ -105,7 +138,7 @@ section {
     }
 }
 
-// PORTFOLIO
+/*PORTFOLIO*/
 #portfolio {
     display: flex;
     justify-content: center;
@@ -113,7 +146,7 @@ section {
     .figure {
         float: left;
         height: 7.20em;
-        margin: 1.5em;
+        margin: 1em;
         width: 12.80em;
         -webkit-transform: perspective(500);
         -webkit-transform-style: preserve-3d;
@@ -150,9 +183,9 @@ section {
     }    
 }
 
-// EXPERIENCE
+/*EXPERIENCE*/
 
-// CONTACT
+/*CONTACT*/
 #contact {
 
     .contacts {
@@ -164,14 +197,23 @@ section {
         font-size: 2em;
     }
     
-    .a {
-        font-size: 20pt;
+    i {
+        color: grey;
     }
+    
+    i:hover {
+        color: gold;
+    }
+    
 }
 
-// FOOTER
+/*FOOTER*/
 #footer {
     width: 100%;
     padding: 2em 0;
     text-align: center;
+    
+    i {
+        color: coral;
+    }
 }
