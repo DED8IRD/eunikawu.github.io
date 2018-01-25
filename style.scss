@@ -74,17 +74,42 @@ body {
     line-height: 1.625;
 }
 
+h1 {
+    color: salmon;
+    font-size: 2.5em;
+    text-transform: uppercase;
+}
+
 section {
     padding: 1em 10%;
+    // outline: #EEE dotted thick;
 }
 
 // HOME
 #home {
     padding-top: 50px;
+    
+    #about-me {
+        
+        p {
+            padding-top: 100px;
+        }
+
+        #avatar {
+            float: left;
+            width: 200px;
+            height: 200px;
+            margin: 1em 5em 1em 1em;
+            border-radius: 50%;
+        }
+    }
 }
 
 // PORTFOLIO
 #portfolio {
+    display: flex;
+    justify-content: center;
+    align-items: center;      
     .figure {
         float: left;
         height: 7.20em;
@@ -129,9 +154,14 @@ section {
 
 // CONTACT
 #contact {
-  
-    .row {
+
+    .contacts {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 1em;
         text-align: center;
+        font-size: 2em;
     }
     
     .a {
@@ -142,6 +172,6 @@ section {
 // FOOTER
 #footer {
     width: 100%;
-    padding: 30px 0;
+    padding: 2em 0;
     text-align: center;
 }
