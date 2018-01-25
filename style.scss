@@ -1,8 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Cabin);
 body, html {
-    margin: 0;
-    padding: 0;
-    font-family: Cabin;
+    font-family: Cabin, 'Open sans', sans-serif;    
 }
 
 body {
@@ -12,19 +10,44 @@ body {
 // HERO 
 .hero {
     display: flex;
-    background-image: url(http://dein-o-business.de/wp-content/uploads/2017/06/Fotolia_101558831_L.jpg);
+    background: url(http://dein-o-business.de/wp-content/uploads/2017/06/Fotolia_101558831_L.jpg) no-repeat center center;
     height: 720px;
     justify-content: center;
     align-items: center;      
     background-size: cover;
-    background-position: center;
     overflow: hidden;
 
     .content {
+        padding: 10%;
         .header {
+            padding-bottom: 40px;
+            
             h1 {
                 color: #fff;
                 font-size: 2.5em;
+                letter-spacing: 9px;
+                text-transform: uppercase;
+            }
+            
+            h2 {
+                color: coral;
+                text-transform: uppercase;
+            }
+        }
+
+        #outer-home-btn {
+            padding-bottom: 40px;
+            #home-btn {
+                display: block;
+                margin: auto;
+                border-radius: 30px;
+                width: 140px;
+                background-color: RGBA(255,255,255,0.5);
+                border: none;
+            }
+        
+            #home-btn:hover {
+                opacity: 0.7;
             }
         }
     }    
@@ -33,7 +56,9 @@ body {
 // NAV
 .navbar {
     margin-bottom: 0px;
-    border-radius: 0;  
+    border-radius: 0;
+    letter-spacing: 2px;
+    text-transform: uppercase; 
 }
 
 .affix {
@@ -44,21 +69,66 @@ body {
 
 // BODY
 .page-content {
-    width: 50em;
     margin: auto;
+    padding: 0 5%;    
     line-height: 1.625;
 }
 
-// HOME
+section {
+    padding: 1em 10%;
+}
 
-// ABOUT ME
+// HOME
+#home {
+    padding-top: 50px;
+}
 
 // PORTFOLIO
+#portfolio {
+    .figure {
+        float: left;
+        height: 7.20em;
+        margin: 1.5em;
+        width: 12.80em;
+        -webkit-transform: perspective(500);
+        -webkit-transform-style: preserve-3d;
+        -webkit-transition: .5s;
+    }
+    
+    .figure:hover {
+        -webkit-transform: perspective(500) rotateX(90deg) translateY(-3em) translateZ(3em);
+    }
+    
+    img {
+        background-color: #222;
+        box-shadow: 0 20px 15px -10px hsla(0,0%,0%,.25);
+        display: block;
+        height: 100%;
+        -webkit-transition: .5s;
+    }
+    
+    .fig-detail {
+        background-color: #222;
+        color: #fff;
+        padding: 1.5em;
+        -webkit-transform: rotateX(-90deg);
+        -webkit-transform-origin: 100% 0;
+        -webkit-transition: .5s;
+    }
+    
+    .figure:hover .fig-detail {
+        box-shadow: 0 20px 15px -10px hsla(0,0%,0%,.25);
+    }
+    
+    h4 {
+        font-weight: bold;
+    }    
+}
 
 // EXPERIENCE
 
 // CONTACT
-.contact {
+#contact {
   
     .row {
         text-align: center;
@@ -70,7 +140,7 @@ body {
 }
 
 // FOOTER
-.footer {
+#footer {
     width: 100%;
     padding: 30px 0;
     text-align: center;

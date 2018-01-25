@@ -1,32 +1,41 @@
-<body data-spy="scroll" data-target=".navbar" data-offset=50>
-    
-<!-- HERO  -->
-    <div class="hero">
+<body>
+    <!-- HERO  -->
+    <header class="hero">
         <div class="content">
             <div class="header">
                 <h1>Eunika Wu</h1>
-                <h2>Portland-based web developer, software engineer, & illustrator</h2>
+                <h2 class="typewrite" data-period="2000" data-type='[ "Hello,", "I&apos;m a developer,", "bot enthusiast,", "and visual artist" ]'>
+                    <span class="wrap"></span>
+                  </a></h2>
+            </div>
+            <div id="outer-home-btn">
+                <a class="btn btn-primary btn-xl" id="home-btn" href="#home">
+                    <i class="fa fa-angle-down fa-5x" aria-hidden="true"></i>
+                </a>
             </div>
         </div>
-    </div>  
-    
-<!-- NAVBAR -->
+    </header>  
+    <!-- NAVBAR -->
     <nav class="navbar navbar-default" data-spy="affix" data-offset-top="720">
         <div class="container-fluid">
             <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
+                        <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>                        
                 </button>
-                <a class="navbar-brand" href="#">Eunika Wu</a>
+                <a class="navbar-brand" href="#">
+                    <i class="fa fa-terminal cmd-icon" aria-hidden="true"></i>                    
+                    Eunika Wu
+                </a>
             </div>
             <div>
                 <div class="collapse navbar-collapse" id="navigation">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="#home">Home</a></li>
                         <li><a href="#portfolio">Projects</a></li>
-                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#resume">Resume</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
@@ -35,53 +44,130 @@
     </nav>    
 
     <div class="page-content">
-        <div id="home" class="container-fluid">
-            <h1>About Me</h1>
-            <p>I'm a Portland, OR based freelance web developer and illustrator with a passion for bot-building</p>
-        </div>
-        <div id="portfolio" class="container-fluid">
-            <h1>Projects</h1>
-            <figure>
-                <img src="http://lorempixel.com/192/96/sports/1" alt="Portfolio Item">
-                <fig-detail>
-                    <h3>Title</h3>
-                    <p>Description.</p>
-                </fig-detail>                
-            </figure>
-        </div>
-        <div id="experience" class="container-fluid">
-            <h1>Section 4 Submenu 1</h1>
-            <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-            <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-        </div>
-        <div id="contact" class="container-fluid">
-<!--       <h1>Contact Me</h1> -->
-            <div class="row">
-                <div class="col-sm-3">
-                        <a href="#" target="eunikawu@gmail.com" class="email">
-                            <i class="fa fa-envelope fa-3x" aria-hidden="true"></i>
-                        </a>
-                </div>
-                <div class="col-sm-3">
-                        <a href="#" target="https://www.linkedin.com/in/eunika-wu-3852a0115/" class="linkedin">
-                            <i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i>
-                        </a>
-                </div>
-                <div class="col-sm-3">
-                        <a href="#" target="https://github.com/DED8IRD/" class="github">
-                            <i class="fa fa-github fa-3x" aria-hidden="true"></i>
-                        </a>            
-                </div>
-                <div class="col-sm-3">
-                        <a href="#" target="https://codepen.io/DED8IRD/" class="codepen">
-                            <i class="fa fa-codepen fa-3x" aria-hidden="true"></i>
-                        </a>            
-                </div> 
+        <!-- HOME -->
+        <section id="home">
+            <div class="container-fluid">
+                <h1>About Me</h1>
+                <p>I'm a Portland, Oregon based freelance web developer, software engineer, and illustrator with a passion for bot-building.</p>
             </div>
-        </div>
-            
-<section class="footer">
-    <p>Made with <i class="fa fa-heart" aria-hidden="true"></i> by Eunika Wu (2018)</p>
-</section>    
+        </section>
+        <!-- PORTFOLIO -->
+        <section id="portfolio">    
+            <div class="container-fluid">
+                <h1>Projects</h1>
+                <div class="figure">
+                    <img src="https://drive.google.com/uc?id=1gkUh_Yp1pjnNqKurpsJZAraHkVX5oA9B" alt="NodingBat">
+                    <div class="fig-detail">
+                        <h4>NodingBat</h4>
+                        <p>Free online JavaScript coding school</p>
+                    </div>                
+                </div>
+                <div class="figure">
+                    <img src="https://drive.google.com/uc?id=1ddTa9seDc-ZMymXfJB8KmPVMkr8jF3Ht" alt="SENTIENCE">
+                    <div class="fig-detail">
+                        <h4>SENTIENCE</h4>
+                        <p>Original content generating bot</p>
+                    </div>                
+                </div>
+                <div class="figure">
+                    <img src="https://drive.google.com/uc?id=1hnpLLXoQ7X17vO94NNTTZX8lrf9MYxZo" alt="D.A.V.E.">
+                    <div class="fig-detail">
+                        <h4>D.A.V.E.</h4>
+                        <p>Formatted screenplay generating bot</p>
+                    </div>                
+                </div>
+                
+                <div id="placeholder">
+                    <div class="figure">
+                        <img src="https://drive.google.com/uc?id=1gkUh_Yp1pjnNqKurpsJZAraHkVX5oA9B" alt="NodingBat">
+                        <div class="fig-detail">
+                            <h4>NodingBat</h4>
+                            <p>Free online JavaScript coding school</p>
+                        </div>                
+                    </div>
+                    <div class="figure">
+                        <img src="https://drive.google.com/uc?id=1ddTa9seDc-ZMymXfJB8KmPVMkr8jF3Ht" alt="SENTIENCE">
+                        <div class="fig-detail">
+                            <h4>SENTIENCE</h4>
+                            <p>Original content generating bot</p>
+                        </div>                
+                    </div>
+                    <div class="figure">
+                        <img src="https://drive.google.com/uc?id=1hnpLLXoQ7X17vO94NNTTZX8lrf9MYxZo" alt="D.A.V.E.">
+                        <div class="fig-detail">
+                            <h4>D.A.V.E.</h4>
+                            <p>Formatted screenplay generating bot</p>
+                        </div>                
+                    </div>    
+                </div>
 
-</body>  
+            </div>
+        </section>
+        <!-- RESUME -->        
+        <section id="resume">
+            <div class="container-fluid">
+                <h1>Skills</h1>
+                <h3>Languages:</h3>
+                <p>
+                    Proficient: Python, Java,
+                    JavaScript, HTML5, CSS
+                    Prior Exposure: C++, C
+                </p>
+                <h3>Frameworks & Libraries:</h3>
+                <p>            
+                    Web2py, Django, React.js,
+                    Node.js, Vue.js, Bootstrap,
+                    jQuery
+                </p>
+                <h3>Databases:</h3>
+                <p>
+                    MySQL, SQLite, Oracle,
+                    PostgreSQL, MongoDB                
+                </p>
+                <h3>Tools:</h3>
+                <p>
+                    Git, Android Studio, JIRA, NLTK
+                    Adobe Illustrator & Photoshop
+                </p>
+                <a class="btn btn-primary btn-xl dl-resume-btn" target="_blank" href="https://drive.google.com/uc?export=download&id=1d7D_Iqjo9RtLw2CR96sVav01UYhuee_l">
+                    Download Resume
+                    <i class="fa fa-download" aria-hidden="true"></i>
+                </a>            
+            </div>
+        </section>
+        <!-- CONTACT -->
+        <section id="contact">
+            <div class="container-fluid">
+          <h1>Contact Me</h1>
+                <div class="row">
+                    <div class="col col-xs-3">
+                            <a href="#" target="eunikawu@gmail.com" class="email">
+                                <i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
+                            </a>
+                    </div>
+                    <div class="col col-xs-3">
+                            <a href="#" target="https://www.linkedin.com/in/eunika-wu-3852a0115/" class="linkedin">
+                                <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
+                            </a>
+                    </div>
+                    <div class="col col-xs-3">
+                            <a href="#" target="https://github.com/DED8IRD/" class="github">
+                                <i class="fa fa-github fa-2x" aria-hidden="true"></i>
+                            </a>            
+                    </div>
+                    <div class="col col-xs-3">
+                            <a href="#" target="https://codepen.io/DED8IRD/" class="codepen">
+                                <i class="fa fa-codepen fa-2x" aria-hidden="true"></i>
+                            </a>            
+                    </div> 
+                </div>
+            </div>
+        </section>
+    </div>
+                
+    <br><br><br><br><br><br><br><br><br><br><br>
+    
+    <section id="footer">
+        <p>Made with <i class="fa fa-heart" aria-hidden="true"></i> by Eunika Wu (2018)</p>
+    </section>    
+</body>
