@@ -77,7 +77,10 @@ body {
 }
 
 /*Override navbar defaults*/
-.navbar-brand, 
+.navbar-brand {
+    color: $accent-color-2;
+}
+
 .navbar-nav > li > a {
     color: $primary-color;
 }
@@ -86,7 +89,6 @@ button.navbar-toggle span {
     background: $primary-color;
 }
 
-.navbar-collapse, 
 button.navbar-toggle:focus {
     background: RGBA(0,0,0,0.05);
     border-radius: 10px;
