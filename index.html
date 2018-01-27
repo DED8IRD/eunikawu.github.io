@@ -52,7 +52,7 @@
                 </div>
             </div>
             <div id="about-me">
-                <img id="avatar" src="https://media-exp2.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAfIAAAAJDk0NTAwYzQyLTBiYzYtNDM5YS1hMjhmLTIxYmI1ZGM2YWYzMQ.jpg" title="Eunika Wu">
+                <img class="img-responsive" id="avatar" src="https://media-exp2.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAfIAAAAJDk0NTAwYzQyLTBiYzYtNDM5YS1hMjhmLTIxYmI1ZGM2YWYzMQ.jpg" title="Eunika Wu">
                 <p>
                     I'm a Portland, Oregon based freelance web developer, software engineer, and artist. Recently, I've been having fun with bot-building. I'm always looking to collaborate in projects (( coding / art / photo / video / animation )). <a href="#contact">Hit me up</a> to collab!
                 </p>
@@ -67,54 +67,106 @@
                     <h1 class="section-heading">Projects</h1>
                 </div>
             </div>
-            <div class="row">                
-                <div class="col col-md-4 col-sm-6 portfolio-item">        
-                    <a href="#pfd" class="portfolio-link" data-toggle="modal">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 portfolio-item">        
+                    <div class="portfolio-container">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
                                 <h3 class="portfolio-title">
                                     NodingBat
                                 </h3>
                                 <p class="portfolio-description">
-                                    Free online JavaScript coding school
+                                    JavaScript coding school
+                                </p>
+                                <p class="portfolio-modal-description">
+                                    Created by <a href="https://omari.io/" title="Omari.io" alt="Omari.io">Omari.io</a>, a web development collective located in Santa Cruz, California, NodingBat is a free, open source online coding school that offers live JavaScript coding problems for users to solve. 
+                                </p>   
+                                <p class="portfolio-modal-description">
+                                    Check it out <a href="https://nodingbat.com/" title="NodingBat" alt="NodingBat">here</a>!
                                 </p>
                             </div>
                         </div>
-                        <img src="https://drive.google.com/uc?id=1gkUh_Yp1pjnNqKurpsJZAraHkVX5oA9B" title="NodingBat">
-                    </a>
+                        <img class="img-responsive" onclick="openModal();" src="https://drive.google.com/uc?id=1gkUh_Yp1pjnNqKurpsJZAraHkVX5oA9B" title="NodingBat" alt="NodingBat">
+                    </div>
                 </div>
-                <div class="col col-md-4 col-sm-6 portfolio-item">        
-                    <a href="#pfd" class="portfolio-link" data-toggle="modal">
+                <div class="col-lg-6 col-md-6 col-sm-6 portfolio-item">        
+                    <div class="portfolio-container">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
                                 <h3 class="portfolio-title">
-                                    SENTIENCE
+                                    EmVibe
                                 </h3>
                                 <p class="portfolio-description">
-                                    Original content generating bot
+                                    GSR-monitoring mobile app
                                 </p>
+                                <p class="portfolio-modal-description">
+                                    Android app for processing galvanic skin response signals used in the Stress & Framing Emotion Feedback Lab for UC Santa Cruz's <a href="https://people.ucsc.edu/~swhittak/Steve_Whittaker_Santa_Cruz_HCI/HCI_Lab_People.html" title="UCSC HCI Lab" alt="UCSC HCI Lab">Human-Computer Interaction Lab</a>.
+                                </p>                                
                             </div>
                         </div>
-                        <img src="https://drive.google.com/uc?id=1ddTa9seDc-ZMymXfJB8KmPVMkr8jF3Ht" title="SENTIENCE">
-                    </a>
+                        <img class="img-responsive" onclick="openModal();" src="https://drive.google.com/uc?id=1Hl6prHGMTsPBI4WSGaiERLYyRqNh-Sld" title="EmVibe" alt="EmVibe">
+                    </div>
                 </div>
-                <div class="col col-md-4 col-sm-6 portfolio-item">        
-                    <a href="#pfd" class="portfolio-link" data-toggle="modal">
+                <div class="col-lg-6 col-md-6 col-sm-6 portfolio-item">        
+                    <div class="portfolio-container">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
                                 <h3 class="portfolio-title">
                                     D.A.V.E.
                                 </h3>
                                 <p class="portfolio-description">
-                                    Formatted screenplay generating bot
+                                    Screenplay bot
+                                </p>
+                                <p class="portfolio-modal-description">
+                                    Generates formatted screenplays (.pdf) through learning from screenplay dataset.
+                                </p>   
+                            </div>
+                        </div>
+                        <img class="img-responsive" onclick="openModal();" src="https://drive.google.com/uc?id=1hnpLLXoQ7X17vO94NNTTZX8lrf9MYxZo" title="D.A.V.E." alt="D.A.V.E">
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 portfolio-item">        
+                    <div class="portfolio-container">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <h3 class="portfolio-title">
+                                    SENTIENCE
+                                </h3>
+                                <p class="portfolio-description">
+                                    Memebot
+                                </p>
+                                <p class="portfolio-modal-description">
+                                    Generates original content (text + image generation) learning from pages of the Weird Facebook collective.
+                                </p>
+                                <p class="portfolio-modal-description">
+                                    Check it out at <a href="https://SENTIEN.CE/" title="S E N T I E N C E" alt="SENTIENCE">https://SENTIEN.CE/</a>
                                 </p>
                             </div>
                         </div>
-                        <img src="https://drive.google.com/uc?id=1hnpLLXoQ7X17vO94NNTTZX8lrf9MYxZo" title="D.A.V.E.">
-                    </a>
+                        <img class="img-responsive" onclick="openModal();" src="https://drive.google.com/uc?id=1ddTa9seDc-ZMymXfJB8KmPVMkr8jF3Ht" title="SENTIENCE" alt="SENTIENCE">
+                    </div>
                 </div>
             </div>
         </div>
+        <!-- Portfolio Modal -->
+        <div class="portfolio-modal modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="modal-body">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>        
     </section>
     <!-- RESUME -->        
     <section id="resume">
@@ -191,6 +243,6 @@
     </section>
 </div>
 <!-- FOOTER -->
-<section id="footer">
+<footer id="footer">
     <p>Made with <i class="fa fa-heart" aria-hidden="true"></i> by Eunika Wu (2018)</p>
-</section>    
+</footer>    

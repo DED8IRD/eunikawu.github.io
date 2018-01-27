@@ -31,5 +31,11 @@ $(document).ready(function() {
     $('#navigation').click(function() {
         $('.navbar-collapse').collapse('hide');
     });
+    
+    // Fills portfolio modal with title and description of portfolio item  
+    var portfolioItem = document.getElementById('mydiv1');
+    var secondDivContent = document.getElementById('mydiv2');
+    Now just assign mydiv1's content to mydiv2.
 
+    secondDivContent.innerHTML = firstDivContent.innerHTML;
 });
