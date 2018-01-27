@@ -34,14 +34,16 @@ $(document).ready(function() {
     
     // Fills portfolio modal with title and description of portfolio item
     $('.portfolio-container').on('click', function() {
+        $('.portfolio-modal-title').html($(this).find('h3.portfolio-title'));
+        $('.portfolio-modal-title').html($(this).find('p.portfolio-description'));
+        $('.portfolio-image').html($(this).find('img'));
+        $('.caption-container').html($(this).find('p.portfolio-modal-description'));
         $('#lightbox').css('display', 'block');
-        // $('#lightbox > .portfolio-title').text($(this).find('h3.portfolio-title').text());
-        // // console.log(title).contents;
     });
     
     // Close lightbox
     $('#close-lightbox').on('click', function() {
-        $('#lightbox').css('display', 'none');        
+        $('#lightbox').css('display', 'none');
     });
     
 
