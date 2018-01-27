@@ -32,10 +32,17 @@ $(document).ready(function() {
         $('.navbar-collapse').collapse('hide');
     });
     
-    // Fills portfolio modal with title and description of portfolio item  
-    var portfolioItem = document.getElementById('mydiv1');
-    var secondDivContent = document.getElementById('mydiv2');
-    Now just assign mydiv1's content to mydiv2.
+    // Fills portfolio modal with title and description of portfolio item
+    $('.portfolio-container').on('click', function() {
+        $('#lightbox').css('display', 'block');
+        // $('#lightbox > .portfolio-title').text($(this).find('h3.portfolio-title').text());
+        // // console.log(title).contents;
+    });
+    
+    // Close lightbox
+    $('#close-lightbox').on('click', function() {
+        $('#lightbox').css('display', 'none');        
+    });
+    
 
-    secondDivContent.innerHTML = firstDivContent.innerHTML;
 });

@@ -86,7 +86,7 @@
                                 </p>
                             </div>
                         </div>
-                        <img class="img-responsive" onclick="openModal();" src="https://drive.google.com/uc?id=1gkUh_Yp1pjnNqKurpsJZAraHkVX5oA9B" title="NodingBat" alt="NodingBat">
+                        <img class="img-responsive" src="https://drive.google.com/uc?id=1gkUh_Yp1pjnNqKurpsJZAraHkVX5oA9B" title="NodingBat" alt="NodingBat">
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 portfolio-item">        
@@ -104,7 +104,7 @@
                                 </p>                                
                             </div>
                         </div>
-                        <img class="img-responsive" onclick="openModal();" src="https://drive.google.com/uc?id=1Hl6prHGMTsPBI4WSGaiERLYyRqNh-Sld" title="EmVibe" alt="EmVibe">
+                        <img class="img-responsive" src="https://drive.google.com/uc?id=1Hl6prHGMTsPBI4WSGaiERLYyRqNh-Sld" title="EmVibe" alt="EmVibe">
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 portfolio-item">        
@@ -122,7 +122,7 @@
                                 </p>   
                             </div>
                         </div>
-                        <img class="img-responsive" onclick="openModal();" src="https://drive.google.com/uc?id=1hnpLLXoQ7X17vO94NNTTZX8lrf9MYxZo" title="D.A.V.E." alt="D.A.V.E">
+                        <img class="img-responsive" src="https://drive.google.com/uc?id=1hnpLLXoQ7X17vO94NNTTZX8lrf9MYxZo" title="D.A.V.E." alt="D.A.V.E">
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 portfolio-item">        
@@ -143,7 +143,7 @@
                                 </p>
                             </div>
                         </div>
-                        <img class="img-responsive" onclick="openModal();" src="https://drive.google.com/uc?id=1ddTa9seDc-ZMymXfJB8KmPVMkr8jF3Ht" title="SENTIENCE" alt="SENTIENCE">
+                        <img class="img-responsive" src="https://drive.google.com/uc?id=1ddTa9seDc-ZMymXfJB8KmPVMkr8jF3Ht" title="SENTIENCE" alt="SENTIENCE">
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 portfolio-item">        
@@ -161,7 +161,7 @@
                                 </p>
                             </div>
                         </div>
-                        <img class="img-responsive" onclick="openModal();" src="https://drive.google.com/uc?id=123oxvqhqMtY8Nck_2zmFfQumaVe512fq" title="ProcessDashboard" alt="ProcessDashboard">
+                        <img class="img-responsive" src="https://drive.google.com/uc?id=123oxvqhqMtY8Nck_2zmFfQumaVe512fq" title="ProcessDashboard" alt="ProcessDashboard">
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 portfolio-item">        
@@ -185,27 +185,22 @@
                                 </p>
                             </div>
                         </div>
-                        <img class="img-responsive" onclick="openModal();" src="https://drive.google.com/uc?id=15Dd187WufhfSnvMwR45qY8Jlio8cI4S3" title="Echo Visualization" alt="Echo Visualization">
+                        <img class="img-responsive" src="https://drive.google.com/uc?id=15Dd187WufhfSnvMwR45qY8Jlio8cI4S3" title="Echo Visualization" alt="Echo Visualization">
                     </div>
                 </div>
             </div>
         </div>
         <!-- Portfolio Modal -->
-        <div class="portfolio-modal modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="portfolio-modal" id="lightbox">
+            <span class="close cursor" id="close-lightbox">&times;</span>
             <div class="modal-content">
-                <div class="close-modal" data-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl">
-                        </div>
-                    </div>
+                <div class="portfolio-modal-title">
+                    <h1 class="section-heading portfolio-title"></h1>
+                    <h3 class="section-subheading portfolio-description"></h3>
                 </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 col-lg-offset-2">
-                            <div class="modal-body">
-                            </div>
-                        </div>
-                    </div>
+                <div class="portfolio-image"></div>
+                <div class="caption-container">
+                    <p class="portfolio-modal-description"></p>
                 </div>
             </div>
         </div>        
