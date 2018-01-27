@@ -5,6 +5,7 @@
 $font-stack: Cabin, 'Open sans', sans-serif;
 $primary-color: #777;
 $light-color: white;
+$dark-color: black;
 $accent-color: salmon;
 $accent-color-2: gold;
 
@@ -51,17 +52,17 @@ body {
     .arrow-btn {
         display: block;
         margin: auto;
-        width: 85px;
-        border-radius: 50%;
         i {
             font-size: 6em;
             color: $accent-color-2;
         }
     }
 
-    .arrow-btn:hover {
+    .arrow-btn:hover, 
+    .arrow-btn:focus {
+        box-shadow: none;        
         i {
-            color: $accent-color;            
+            color: $accent-color;
         }
     }
 }
@@ -71,6 +72,7 @@ body {
 .navbar {
     background-color: RGBA(255,255,255,0.9);
     border: none;
+    border-radius: 0;
     letter-spacing: 2px;
     text-transform: uppercase; 
     font-weight: bold;
@@ -89,9 +91,17 @@ button.navbar-toggle span {
     background: $primary-color;
 }
 
+button.navbar-toggle:focus span {
+    background: $accent-color;
+}
+
 button.navbar-toggle:focus {
     background: RGBA(0,0,0,0.05);
     border-radius: 10px;
+}
+
+.navbar-nav > li > a:focus {
+    background-color: RGBA(255,255,255,0);
 }
 
 .navbar-brand:hover, 
@@ -167,45 +177,59 @@ section {
 #portfolio {
     display: flex;
     justify-content: center;
-    align-items: center;      
-    .figure {
-        float: left;
-        height: 7.20em;
-        margin: 1em;
-        width: 12.80em;
-        -webkit-transform: perspective(500);
-        -webkit-transform-style: preserve-3d;
-        -webkit-transition: .5s;
+    align-items: center;  
+
+    .portfolio-item {
+        padding: 1em;
+        
+        .portfolio-link {
+            display: block;
+            position: relative;
+            margin: auto;
+            max-width: 400px; 
+            
+            img {
+                background-color: #222;
+                box-shadow: 0 20px 15px -10px hsla(0,0%,0%,.25);
+                display: block;
+                max-width: 100%;
+                max-height: 100%;
+                -webkit-transition: .5s;
+            }         
+            
+            .portfolio-hover {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                background: $dark-color;
+                -webkit-transition: all ease .5s;
+                -moz-transition: all ease .5s;
+                transition: all ease .5s;  
+                
+                .portfolio-hover-content {
+                    position: absolute;
+                    padding: 1em;
+                    top: 50%;
+                    transform: translate(0, -50%);
+                    color: $light-color;
+                    
+                    .portfolio-title {
+                        color: $accent-color-2;
+                        font-size: 2em;
+                    }
+                    
+                    .portfolio-description {
+                        font-size: 1em;
+                    }
+                }                
+            }
+            
+            .portfolio-hover:hover {
+                opacity: 0.7;
+            }                    
+        }   
     }
-    
-    .figure:hover {
-        -webkit-transform: perspective(500) rotateX(90deg) translateY(-3em) translateZ(3em);
-    }
-    
-    img {
-        background-color: #222;
-        box-shadow: 0 20px 15px -10px hsla(0,0%,0%,.25);
-        display: block;
-        height: 100%;
-        -webkit-transition: .5s;
-    }
-    
-    .fig-detail {
-        background-color: #222;
-        color: #fff;
-        padding: 1.5em;
-        -webkit-transform: rotateX(-90deg);
-        -webkit-transform-origin: 100% 0;
-        -webkit-transition: .5s;
-    }
-    
-    .figure:hover .fig-detail {
-        box-shadow: 0 20px 15px -10px hsla(0,0%,0%,.25);
-    }
-    
-    h4 {
-        font-weight: bold;
-    }    
 }
 
 /*EXPERIENCE*/
