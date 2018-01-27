@@ -34,10 +34,8 @@ $(document).ready(function() {
     
     // Fills portfolio modal with title and description of portfolio item
     $('.portfolio-container').on('click', function() {
-        $('.portfolio-modal-title').html($(this).find('h3.portfolio-title'));
-        $('.portfolio-modal-title').html($(this).find('p.portfolio-description'));
-        $('.portfolio-image').html($(this).find('img'));
-        $('.caption-container').html($(this).find('p.portfolio-modal-description'));
+        $('.portfolio-image').html($(this).find('img')[0].outerHTML);
+        $('.caption-container').html($(this).find('div.portfolio-hover-content').html());
         $('#lightbox').css('display', 'block');
     });
     
