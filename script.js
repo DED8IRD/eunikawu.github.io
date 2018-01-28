@@ -30,19 +30,26 @@ $(document).ready(function() {
     // Closes responsive menu when a scroll trigger link is clicked
     $('#navigation').click(function() {
         $('.navbar-collapse').collapse('hide');
-    });
+    }); 
     
-    // Fills portfolio modal with title and description of portfolio item
-    $('.portfolio-container').on('click', function() {
-        $('.portfolio-image').html($(this).find('img')[0].outerHTML);
-        $('.caption-container').html($(this).find('div.portfolio-hover-content').html());
-        $('#lightbox').css('display', 'block');
+    // Lightbox for portfolio items
+    $(document).on('click', '.portfolio-container', function(event) {
+        var $lightbox = $("<div id='lightbox'></div>");
+        var $close = $("<span class='close'>&times;</span>");
+        var $contents = $("<div class='modal-content'></div>");
+        var $caption = $("<div class='caption-container'></div>");
+        var $img = $(this).find('img')[0].outerHTML;
+        $caption
+            .append($(this).find('div.portfolio-hover-content').html());
+        $lightbox
+            .append($close)
+            .append($contents
+                .append($img)
+                .append($caption));
+        $('body').append($lightbox);
+        $lightbox.fadeIn('fast');
+        $lightbox.click(function() {
+            $lightbox.fadeOut('fast');
+        });
     });
-    
-    // Close lightbox
-    $('#close-lightbox').on('click', function() {
-        $('#lightbox').css('display', 'none');
-    });
-    
-
 });
