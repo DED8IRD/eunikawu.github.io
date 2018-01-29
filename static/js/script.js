@@ -14,14 +14,15 @@ $(document).ready(function() {
                 && 
                 location.hostname == this.hostname
             ) {
-                var target = $(this.hash);
+                var hash = this.hash;
+                var target = $(hash);
                 target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
                 if (target.length) {
                     event.preventDefault();
                     $('html, body').stop().animate({
                         scrollTop: target.offset().top - navOffset + 1
                     }, 300, function () {
-                        window.location.hash = target;
+                        window.location.hash = hash;
                     });
                 }
             }
