@@ -241,6 +241,7 @@ section {
   margin: auto;
   padding: 0;
   width: 90%;
+  max-width: 720px;
 }
 #lightbox .modal-content img {
   margin: auto;
