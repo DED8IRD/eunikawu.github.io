@@ -12,7 +12,7 @@ body {
 /*HERO*/
 .hero {
   display: flex;
-  background: url(../images/hero-bkgd.jpg) no-repeat center center;
+  background: url(http://dein-o-business.de/wp-content/uploads/2017/06/Fotolia_101558831_L.jpg) no-repeat center center;
   height: 720px;
   justify-content: center;
   align-items: center;
@@ -177,7 +177,7 @@ section {
   display: block;
   max-width: 100%;
   max-height: 100%;
-  -webkit-transition: .5s;
+  -webkit-transition: 0.5s;
 }
 #portfolio .portfolio-item .portfolio-container .portfolio-hover {
   position: absolute;
@@ -185,9 +185,9 @@ section {
   height: 100%;
   opacity: 0;
   background: black;
-  -webkit-transition: all ease .5s;
-  -moz-transition: all ease .5s;
-  transition: all ease .5s;
+  -webkit-transition: all ease 0.5s;
+  -moz-transition: all ease 0.5s;
+  transition: all ease 0.5s;
 }
 #portfolio .portfolio-item .portfolio-container .portfolio-hover .portfolio-hover-content {
   position: absolute;
@@ -241,7 +241,6 @@ section {
   margin: auto;
   padding: 0;
   width: 90%;
-  max-width: 720px;
 }
 #lightbox .modal-content img {
   margin: auto;
