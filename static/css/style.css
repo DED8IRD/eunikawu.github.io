@@ -24,15 +24,31 @@ body, html {
 .hero .content .header {
   padding-bottom: 40px;
 }
-.hero .content .header h1 {
-  color: darkslategray;
-  font-size: 2.5em;
-  letter-spacing: 9px;
-  text-transform: uppercase;
+.hero .content .header .card {
+  background-color: white;
+  font-family: Consolas, "Lucida Console", monospace;
+  height: 200px;
+  width: 350px;
+  margin: 20vh auto 0 auto;
+  padding: 20px 10px 10px 10px;
+  transform: rotateX(60deg) rotateY(0deg) rotateZ(45deg);
+  box-shadow: 10;
+  transition: transform 0.8s ease, box-shadow 0.8s ease;
+  box-shadow: 2em 2em 2em rgba(0, 0, 0, 0.4);
 }
-.hero .content .header h2 {
-  letter-spacing: 3px;
-  color: gold;
+.hero .content .header .card:hover {
+  transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateY(1em) translateZ(1em);
+}
+.hero .content .header .card:focus {
+  transform: rotateX(-180deg) rotateY(0deg) rotateZ(0deg) translateY(1em) translateZ(1em);
+}
+.hero .content .header .card:focus .card-front {
+  backface-visibility: hidden;
+}
+.hero .content .header .card:hover, .hero .content .header .card:focus {
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.4);
+  outline: none;
+  border: none;
 }
 
 .outer-arrow-btn {
