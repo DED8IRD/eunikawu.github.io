@@ -3,16 +3,15 @@
 /*VARIABLES*/
 body, html {
   font-family: Cabin, "Open sans", sans-serif;
-}
-
-body {
-  position: relative;
+  height: 100%;
+  width: 100%;
 }
 
 /*HERO*/
 .hero {
   display: flex;
-  background: url("../images/hero-bkgd.jpg") no-repeat center center;
+  background: radial-gradient(circle farthest-side, #f4f4f4, #efeee8);
+  background-repeat: no-repeat;
   height: 720px;
   justify-content: center;
   align-items: center;
@@ -26,14 +25,14 @@ body {
   padding-bottom: 40px;
 }
 .hero .content .header h1 {
-  color: white;
+  color: darkslategray;
   font-size: 2.5em;
   letter-spacing: 9px;
   text-transform: uppercase;
 }
 .hero .content .header h2 {
   letter-spacing: 3px;
-  color: salmon;
+  color: gold;
 }
 
 .outer-arrow-btn {
@@ -53,7 +52,7 @@ body {
 }
 .outer-arrow-btn .arrow-btn:hover i,
 .outer-arrow-btn .arrow-btn:focus i {
-  color: salmon;
+  color: gold;
 }
 
 /*NAV*/
@@ -80,7 +79,7 @@ button.navbar-toggle span {
 }
 
 button.navbar-toggle:focus span {
-  background: salmon;
+  background: gold;
 }
 
 button.navbar-toggle:focus {
@@ -95,21 +94,21 @@ button.navbar-toggle:focus {
 .navbar-brand:hover,
 .navbar-brand:focus,
 .navbar-nav > li > a:hover {
-  color: salmon;
+  color: gold;
   background-color: RGBA(255, 255, 255, 0);
 }
 
 .navbar-nav > .active > a,
 .navbar-nav > .active > a:hover,
 .navbar-nav > .active > a:focus {
-  color: salmon;
+  color: gold;
   background-color: RGBA(255, 255, 255, 0);
 }
 
 .navbar-nav > .open > a,
 .navbar-nav > .open > a:hover,
 .navbar-nav > .open > a:focus {
-  color: salmon;
+  color: gold;
   background-color: RGBA(255, 255, 255, 0);
 }
 
@@ -126,7 +125,7 @@ button.navbar-toggle:focus {
 }
 
 .section-heading {
-  color: salmon;
+  color: gold;
   font-size: 2.5em;
   text-transform: uppercase;
   font-weight: bold;
@@ -252,7 +251,7 @@ section {
   padding: 2em;
 }
 #lightbox .modal-content .caption-container .portfolio-title {
-  color: salmon;
+  color: gold;
   font-size: 2em;
 }
 #lightbox .modal-content .caption-container .portfolio-description {
@@ -291,3 +290,5 @@ section {
 #footer i {
   color: coral;
 }
+
+/*# sourceMappingURL=style.css.map */

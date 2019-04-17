@@ -7,21 +7,21 @@ $primary-color: #777;
 $light-color: white;
 $dark-color: black;
 $dark-color-2: darkslategray;
-$accent-color: salmon;
+$accent-color: gold;
 $accent-color-2: gold;
 
 body, html {
     font-family: $font-stack;
-}
-
-body {
-    position: relative;
+    height: 100%;
+    width: 100%;
 }
 
 /*HERO*/
 .hero {
     display: flex;
-    background: url('../images/hero-bkgd.jpg') no-repeat center center;
+    // background: url('../images/hero-bkgd.jpg') no-repeat center center;
+    background: radial-gradient(circle farthest-side, #f4f4f4, #efeee8);
+    background-repeat: no-repeat;    
     height: 720px;
     justify-content: center;
     align-items: center;      
@@ -34,7 +34,7 @@ body {
             padding-bottom: 40px;
             
             h1 {
-                color: $light-color;
+                color: $dark-color-2;
                 font-size: 2.5em;
                 letter-spacing: 9px;
                 text-transform: uppercase;
