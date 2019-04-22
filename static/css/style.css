@@ -24,11 +24,13 @@ body, html {
 .hero .content .header {
   padding-bottom: 40px;
 }
+.hero .content .header .card-container,
 .hero .content .header .card,
 .hero .content .header .card-under,
+.hero .content .header .card:hover,
+.hero .content .header .card:focus,
 .hero .content .header .card:before,
 .hero .content .header .card:after {
-  background-color: white;
   width: 35rem;
   height: 20rem;
   max-width: 70vw;
@@ -36,82 +38,72 @@ body, html {
   outline: none;
   border: none;
   border-radius: 1em;
-  transition-delay: 0.5s;
+  transition: all 0.8s ease;
 }
-.hero .content .header .card,
-.hero .content .header .card:before,
-.hero .content .header .card:after,
-.hero .content .header .card:hover,
-.hero .content .header .card:hover:before,
-.hero .content .header .card:hover:after {
-  transition: all 0.5s ease-in-out;
+.hero .content .header .card-under {
+  box-shadow: 1em 1em 1em rgba(0, 0, 0, 0.3);
 }
-.hero .content .header .card {
+.hero .content .header .card-under.one {
+  transform: rotateX(60deg) rotateY(1deg) rotateZ(45deg) translateZ(-1rem);
+}
+.hero .content .header .card-under.two {
+  transform: rotateX(60deg) rotateY(1deg) rotateZ(45deg) translateZ(-2rem);
+}
+.hero .content .header .card-container {
   position: relative;
+}
+.hero .content .header .card-container .card {
+  background-color: white;
   font-family: "Open sans", Helvetica, sans-serif;
   text-transform: lowercase;
-  box-shadow: 1em 1em 1em rgba(0, 0, 0, 0.4);
-  transform: rotateX(60deg) rotateY(0deg) rotateZ(45deg);
-  transition: transform 0.8s ease, box-shadow 0.8s ease;
+  box-shadow: 1em 1em 1em rgba(0, 0, 0, 0.2);
+  transform: rotateX(60deg) rotateY(1deg) rotateZ(45deg);
   transform-style: preserve-3d;
   perspective: 150rem;
 }
-.hero .content .header .card:before {
-  transform: rotate(5deg);
-}
-.hero .content .header .card:after {
-  transform: rotate(10deg);
-}
-.hero .content .header .card:before, .hero .content .header .card:after {
-  transition-delay: 0.4s;
-}
-.hero .content .header .card:hover {
+.hero .content .header .card-container .card:hover {
   transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(1em);
+  box-shadow: 0 0 10em 100vw rgba(0, 0, 0, 0.6);
 }
-.hero .content .header .card:focus {
+.hero .content .header .card-container .card:focus {
   transform: rotateX(-180deg) rotateY(0deg) rotateZ(0deg) translateZ(1em);
+  box-shadow: 0 0 4rem 2rem rgba(0, 0, 0, 0.5);
 }
-.hero .content .header .card:hover, .hero .content .header .card:focus {
-  box-shadow: 0 0 1em rgba(0, 0, 0, 0.4);
-}
-.hero .content .header .card-front {
-  grid-template-areas: "top-left    . . . . .     top-right" ".         . . name . .            ." ".       . . company . .           ." ".         . . job . .             ." "bottom-left . . . . . bottom-right";
+.hero .content .header .card-container .card-front {
   transform: rotateX(0deg);
+  grid-template-areas: "top-left    . . . . .     top-right" ".         . . name . .            ." ".       . . company . .           ." ".         . . job . .             ." "bottom-left . . . . . bottom-right";
 }
-.hero .content .header .card-front .namecard {
+.hero .content .header .card-container .card-front .namecard {
   grid-area: name;
   font-weight: bold;
   font-size: 2.5rem;
 }
-.hero .content .header .card-front .company {
+.hero .content .header .card-container .card-front .company {
   grid-area: company;
 }
-.hero .content .header .card-front .job-title {
+.hero .content .header .card-container .card-front .job-title {
   grid-area: job;
 }
-.hero .content .header .card-front:after {
-  color: black;
-}
-.hero .content .header .card-back {
-  grid-template-areas: "top-left    . . . . .     top-right" ".          . . name . .           ." ".           . . . . .             ." ".         . . social . .          ." "bottom-left . . . . . bottom-right";
+.hero .content .header .card-container .card-back {
   transform: rotateX(180deg);
+  grid-template-areas: "top-left    . . . . .     top-right" ".          . . name . .           ." ".           . . . . .             ." ".         . . social . .          ." "bottom-left . . . . . bottom-right";
 }
-.hero .content .header .card-back .namecard {
+.hero .content .header .card-container .card-back .namecard {
   grid-area: name;
 }
-.hero .content .header .card-back .social {
+.hero .content .header .card-container .card-back .social {
   grid-area: social;
   display: grid;
   grid-template-columns: repeat(3, auto);
 }
-.hero .content .header .card-back:after {
-  color: black;
-}
-.hero .content .header .card-front, .hero .content .header .card-back {
+.hero .content .header .card-container .card-front, .hero .content .header .card-container .card-back {
   padding: 20px 10px 10px 10px;
   backface-visibility: hidden;
 }
-.hero .content .header .card-under, .hero .content .header .card-front, .hero .content .header .card-back, .hero .content .header .card:after, .hero .content .header .card:before {
+.hero .content .header .card-container .card-front:after, .hero .content .header .card-container .card-back:after {
+  color: black;
+}
+.hero .content .header .card-container .card-under, .hero .content .header .card-container .card-front, .hero .content .header .card-container .card-back, .hero .content .header .card-container .card:after, .hero .content .header .card-container .card:before {
   position: absolute;
   display: grid;
   width: 100%;

@@ -34,11 +34,13 @@ body, html {
         .header {
             padding-bottom: 40px;
             
+            .card-container,
             .card,
             .card-under,
+            .card:hover,
+            .card:focus,
             .card:before,
             .card:after {
-                background-color: white;
                 width: 35rem;
                 height: 20rem;
                 max-width: 70vw;
@@ -46,121 +48,105 @@ body, html {
                 outline: none;
                 border: none;
                 border-radius: 1em;
-                transition-delay: 0.5s;
-            }
+                transition: all 0.8s ease;
+            }   
 
-            .card,
-            .card:before,
-            .card:after,
-            .card:hover,
-            .card:hover:before,
-            .card:hover:after {
-              transition: all 0.5s ease-in-out;
-            }            
+            .card-under {
+                box-shadow: 1em 1em 1em rgba(black, .3);
+
+                &.one {
+                    transform: rotateX(60deg) rotateY(1deg) rotateZ(45deg) translateZ(-1rem);
+                }
+                &.two {
+                    transform: rotateX(60deg) rotateY(1deg) rotateZ(45deg) translateZ(-2rem);
+                }
+            }         
                 
-            .card {
+            .card-container {
                 position: relative;  
-                font-family: $cardfont;
-                text-transform: lowercase;
-                box-shadow: 1em 1em 1em rgba(black, .4);
 
-                transform: rotateX(60deg) rotateY(0deg) rotateZ(45deg);
-                transition: transform .8s ease,
-                            box-shadow .8s ease;
-                transform-style: preserve-3d;
-                perspective: 150rem;
+                .card {
+                    background-color: white;
+                    font-family: $cardfont;
+                    text-transform: lowercase;
+                    box-shadow: 1em 1em 1em rgba(black, .2);
 
-                &:before {
-                    transform: rotate(5deg);
-                }
-                &:after {
-                    transform: rotate(10deg);
-                }
+                    transform: rotateX(60deg) rotateY(1deg) rotateZ(45deg);
+                    transform-style: preserve-3d;
+                    perspective: 150rem;
 
-                &:before,
-                &:after {
-                    transition-delay: 0.4s;
-                }
-
-                &:hover { 
-                    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(1em);
-                }
-                &:focus {
-                    transform: rotateX(-180deg) rotateY(0deg) rotateZ(0deg) translateZ(1em);                
-                }
-                &:hover, 
-                &:focus {
-                    box-shadow: 0 0 1em rgba(black, 0.4);
-                }
-
-                &-front {
-                    grid-template-areas: 
-                        "top-left    . . . . .     top-right"
-                        ".         . . name . .            ."
-                        ".       . . company . .           ."
-                        ".         . . job . .             ."
-                        "bottom-left . . . . . bottom-right";
-            
-                    .namecard {
-                        grid-area: name;
-                        font-weight: bold;
-                        font-size: 2.5rem;
+                    &:hover { 
+                        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(1em);
+                        box-shadow: 0 0 10em 100vw rgba(black, 0.6);
+                    }
+                    &:focus {
+                        transform: rotateX(-180deg) rotateY(0deg) rotateZ(0deg) translateZ(1em);                
+                        box-shadow: 0 0 4rem 2rem rgba(black, 0.5);
                     }
 
-                    .company {
-                        grid-area: company;
-                    }   
+                    &-front {
+                        transform: rotateX(0deg);
+                        grid-template-areas: 
+                            "top-left    . . . . .     top-right"
+                            ".         . . name . .            ."
+                            ".       . . company . .           ."
+                            ".         . . job . .             ."
+                            "bottom-left . . . . . bottom-right";
+                
+                        .namecard {
+                            grid-area: name;
+                            font-weight: bold;
+                            font-size: 2.5rem;
+                        }
 
-                    .job-title {
-                        grid-area: job;
-                    }   
+                        .company {
+                            grid-area: company;
+                        }   
 
-                    transform: rotateX(0deg);
-                    &:after {
-                        color: darken(black, 6%);
+                        .job-title {
+                            grid-area: job;
+                        }                    
                     }
-                }
-                &-back {
-                    grid-template-areas: 
-                        "top-left    . . . . .     top-right"
-                        ".          . . name . .           ."
-                        ".           . . . . .             ."
-                        ".         . . social . .          ."
-                        "bottom-left . . . . . bottom-right";
+                    &-back {
+                        transform: rotateX(180deg);
+                        grid-template-areas: 
+                            "top-left    . . . . .     top-right"
+                            ".          . . name . .           ."
+                            ".           . . . . .             ."
+                            ".         . . social . .          ."
+                            "bottom-left . . . . . bottom-right";
 
-                    .namecard {
-                        grid-area: name;
+                        .namecard {
+                            grid-area: name;
+                        }
+
+                        .social {
+                            grid-area: social;
+                            display: grid;
+                            grid-template-columns: repeat(3, auto);
+                        }
+                    }
+                    &-front,
+                    &-back {
+                        padding: 20px 10px 10px 10px;
+                        backface-visibility: hidden;
+                        &:after {
+                            color: darken(black, 15%);
+                        }                            
                     }
 
-                    .social {
-                        grid-area: social;
+                    &-under,
+                    &-front,
+                    &-back,
+                    &:after,
+                    &:before {
+                        position: absolute;
                         display: grid;
-                        grid-template-columns: repeat(3, auto);
-                    }                    
-
-                    transform: rotateX(180deg);
-                    &:after {
-                        color: darken(black, 15%);
+                        width: 100%;
+                        height: 100%;
+                        left: 0;
+                        top: 0;
                     }
-                }
-                &-front,
-                &-back {
-
-                    padding: 20px 10px 10px 10px;
-                    backface-visibility: hidden;
-                }
-
-                &-under,
-                &-front,
-                &-back,
-                &:after,
-                &:before {
-                    position: absolute;
-                    display: grid;
-                    width: 100%;
-                    height: 100%;
-                    left: 0;
-                    top: 0;
                 }
             }
         }
