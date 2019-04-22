@@ -24,45 +24,55 @@ body, html {
 .hero .content .header {
   padding-bottom: 40px;
 }
-.hero .content .header .card {
-  position: relative;
+.hero .content .header .card,
+.hero .content .header .card-under,
+.hero .content .header .card:before,
+.hero .content .header .card:after {
   background-color: white;
-  font-family: "Open sans", Helvetica, sans-serif;
-  text-transform: lowercase;
   width: 35rem;
   height: 20rem;
   max-width: 70vw;
   max-height: 40vw;
   outline: none;
+  border: none;
   border-radius: 1em;
-  box-shadow: 2em 2em 2em rgba(0, 0, 0, 0.4);
+  transition-delay: 0.5s;
+}
+.hero .content .header .card,
+.hero .content .header .card:before,
+.hero .content .header .card:after,
+.hero .content .header .card:hover,
+.hero .content .header .card:hover:before,
+.hero .content .header .card:hover:after {
+  transition: all 0.5s ease-in-out;
+}
+.hero .content .header .card {
+  position: relative;
+  font-family: "Open sans", Helvetica, sans-serif;
+  text-transform: lowercase;
+  box-shadow: 1em 1em 1em rgba(0, 0, 0, 0.4);
   transform: rotateX(60deg) rotateY(0deg) rotateZ(45deg);
-  box-shadow: 10;
   transition: transform 0.8s ease, box-shadow 0.8s ease;
   transform-style: preserve-3d;
   perspective: 150rem;
 }
 .hero .content .header .card:before {
-  transform: rotate(7deg);
+  transform: rotate(5deg);
 }
 .hero .content .header .card:after {
-  transform: rotate(14deg);
+  transform: rotate(10deg);
 }
 .hero .content .header .card:before, .hero .content .header .card:after {
-  position: absolute;
   transition-delay: 0.4s;
 }
 .hero .content .header .card:hover {
-  transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateY(1em) translateZ(1em);
+  transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(1em);
 }
 .hero .content .header .card:focus {
-  transform: rotateX(-180deg) rotateY(0deg) rotateZ(0deg) translateY(1em) translateZ(1em);
+  transform: rotateX(-180deg) rotateY(0deg) rotateZ(0deg) translateZ(1em);
 }
 .hero .content .header .card:hover, .hero .content .header .card:focus {
   box-shadow: 0 0 1em rgba(0, 0, 0, 0.4);
-}
-.hero .content .header .card:hover:before, .hero .content .header .card:hover:after, .hero .content .header .card:focus:before, .hero .content .header .card:focus:after {
-  border: none;
 }
 .hero .content .header .card-front {
   grid-template-areas: "top-left    . . . . .     top-right" ".         . . name . .            ." ".       . . company . .           ." ".         . . job . .             ." "bottom-left . . . . . bottom-right";
@@ -98,14 +108,16 @@ body, html {
   color: black;
 }
 .hero .content .header .card-front, .hero .content .header .card-back {
+  padding: 20px 10px 10px 10px;
+  backface-visibility: hidden;
+}
+.hero .content .header .card-under, .hero .content .header .card-front, .hero .content .header .card-back, .hero .content .header .card:after, .hero .content .header .card:before {
   position: absolute;
   display: grid;
   width: 100%;
   height: 100%;
   left: 0;
   top: 0;
-  padding: 20px 10px 10px 10px;
-  backface-visibility: hidden;
 }
 
 .outer-arrow-btn {

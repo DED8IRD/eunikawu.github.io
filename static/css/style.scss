@@ -34,52 +34,63 @@ body, html {
         .header {
             padding-bottom: 40px;
             
-            .card {
-                position: relative;  
+            .card,
+            .card-under,
+            .card:before,
+            .card:after {
                 background-color: white;
-                font-family: $cardfont;
-                text-transform: lowercase;
                 width: 35rem;
                 height: 20rem;
                 max-width: 70vw;
                 max-height: 40vw;
                 outline: none;
+                border: none;
                 border-radius: 1em;
-                box-shadow: 2em 2em 2em rgba(black, .4);
+                transition-delay: 0.5s;
+            }
+
+            .card,
+            .card:before,
+            .card:after,
+            .card:hover,
+            .card:hover:before,
+            .card:hover:after {
+              transition: all 0.5s ease-in-out;
+            }            
+                
+            .card {
+                position: relative;  
+                font-family: $cardfont;
+                text-transform: lowercase;
+                box-shadow: 1em 1em 1em rgba(black, .4);
 
                 transform: rotateX(60deg) rotateY(0deg) rotateZ(45deg);
-                box-shadow: 10;
                 transition: transform .8s ease,
                             box-shadow .8s ease;
                 transform-style: preserve-3d;
                 perspective: 150rem;
 
                 &:before {
-                    transform: rotate(7deg);
+                    transform: rotate(5deg);
                 }
                 &:after {
-                    transform: rotate(14deg);
+                    transform: rotate(10deg);
                 }
 
                 &:before,
                 &:after {
-                    position: absolute;
                     transition-delay: 0.4s;
                 }
 
                 &:hover { 
-                    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg)  translateY(1em) translateZ(1em);
+                    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(1em);
                 }
                 &:focus {
-                    transform: rotateX(-180deg) rotateY(0deg) rotateZ(0deg) translateY(1em) translateZ(1em);                
+                    transform: rotateX(-180deg) rotateY(0deg) rotateZ(0deg) translateZ(1em);                
                 }
                 &:hover, 
                 &:focus {
                     box-shadow: 0 0 1em rgba(black, 0.4);
-                    &:before,
-                    &:after {
-                        border: none;
-                    }
                 }
 
                 &-front {
@@ -134,14 +145,22 @@ body, html {
                 }
                 &-front,
                 &-back {
+
+                    padding: 20px 10px 10px 10px;
+                    backface-visibility: hidden;
+                }
+
+                &-under,
+                &-front,
+                &-back,
+                &:after,
+                &:before {
                     position: absolute;
                     display: grid;
                     width: 100%;
                     height: 100%;
                     left: 0;
                     top: 0;
-                    padding: 20px 10px 10px 10px;
-                    backface-visibility: hidden;
                 }
             }
         }
