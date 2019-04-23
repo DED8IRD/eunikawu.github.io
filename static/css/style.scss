@@ -5,11 +5,12 @@
 $font-stack: Cabin, 'Open sans', sans-serif;
 $cardfont:  'Open sans', Helvetica,  sans-serif;
 $primary-color: #777;
-$light-color: white;
-$dark-color: black;
-$dark-color-2: darkslategray;
-$accent-color: gold;
-$accent-color-2: gold;
+$light-color: #CEDADA;
+$light-color-2: #FFF;
+$dark-color: #0F0F0F;
+$dark-color-2: #466B60;
+$accent-color: #DB6200;
+$accent-color-2: #FFA630;
 
 body, html {
     font-family: $font-stack;
@@ -20,146 +21,157 @@ body, html {
 /*HERO*/
 .hero {
     display: flex;
-    // background: url('../images/hero-bkgd.jpg') no-repeat center center;
     background: radial-gradient(circle farthest-side, #f4f4f4, #efeee8);
-    background-repeat: no-repeat;    
-    height: 720px;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
     justify-content: center;
     align-items: center;      
     background-size: cover;
-    overflow: hidden;
 
-    .content {
-        padding: 10%;
-        .header {
-            padding-bottom: 40px;
-            
-            .card-container,
-            .card,
-            .card-under,
-            .card:hover,
-            .card:focus,
-            .card:before,
-            .card:after {
-                width: 35rem;
-                height: 20rem;
-                max-width: 70vw;
-                max-height: 40vw;
-                outline: none;
-                border: none;
-                border-radius: 1em;
-                transition: all 0.8s ease;
-            }   
+    // .overlay {
+    //     position: absolute;
+    //     background-color: $dark-color;
+    //     width: 100vw;
+    //     height: 100vh;
+    //     top: calc(-50vh + 50%);
+    //     left: calc(-50vw + 50%);
+    //     opacity: 0;
+    // }
 
-            .card-under {
-                box-shadow: 1em 1em 1em rgba(black, .3);
+    .card-container,
+    .card,
+    .card-under,
+    .card:hover,
+    .card:focus,
+    .card:before,
+    .card:after {
+        width: 35rem;
+        height: 20rem;
+        max-width: 70vw;
+        max-height: 40vw;
+        outline: none;
+        border: none;
+        border-radius: 1rem;
+        transition: all 0.6s ease;
+        will-change: transform;
+    }   
 
-                &.one {
-                    transform: rotateX(60deg) rotateY(1deg) rotateZ(45deg) translateZ(-1rem);
-                }
-                &.two {
-                    transform: rotateX(60deg) rotateY(1deg) rotateZ(45deg) translateZ(-2rem);
-                }
-            }         
-                
-            .card-container {
-                position: relative;  
+    .card-under {
+        box-shadow: 1rem 1rem 1rem rgba(black, .3);
 
-                .card {
-                    background-color: white;
-                    font-family: $cardfont;
-                    text-transform: lowercase;
-                    box-shadow: 1em 1em 1em rgba(black, .2);
+        &.one {
+            transform: rotateX(60deg) rotateY(1deg) rotateZ(45deg) translateZ(-1rem);
+        }
+        &.two {
+            transform: rotateX(60deg) rotateY(1deg) rotateZ(45deg) translateZ(-2rem);
+        }
+    }         
+        
+    .card-container {
+        position: relative;  
 
-                    transform: rotateX(60deg) rotateY(1deg) rotateZ(45deg);
-                    transform-style: preserve-3d;
-                    perspective: 150rem;
+        .card {
+            background-color: white;
+            font-family: $cardfont;
+            text-transform: lowercase;
+            box-shadow: 1rem 1rem 1rem rgba(black, .2);
 
-                    &:hover { 
-                        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(1em);
-                        box-shadow: 0 0 10em 100vw rgba(black, 0.6);
-                    }
-                    &:focus {
-                        transform: rotateX(-180deg) rotateY(0deg) rotateZ(0deg) translateZ(1em);                
-                        box-shadow: 0 0 4rem 2rem rgba(black, 0.5);
-                    }
+            transform: rotateX(60deg) rotateY(1deg) rotateZ(45deg);
+            transform-style: preserve-3d;
+            perspective: 150rem;
 
-                    &-front {
-                        transform: rotateX(0deg);
-                        grid-template-areas: 
-                            "top-left    . . . . .     top-right"
-                            ".         . . name . .            ."
-                            ".       . . company . .           ."
-                            ".         . . job . .             ."
-                            "bottom-left . . . . . bottom-right";
-                
-                        .namecard {
-                            grid-area: name;
-                            font-weight: bold;
-                            font-size: 2.5rem;
-                        }
+            &:hover { 
+                transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(1rem) translateY(1rem) scale(1.2);
+            }
+            &:focus {
+                transform: rotateX(-180deg) rotateY(0deg) rotateZ(0deg) translateZ(1rem) translateY(-1rem) scale(1.2);                
+            }
+            &:hover,
+            &:focus {
+                box-shadow: 0 0 1rem rgba(black, 0.5);
 
-                        .company {
-                            grid-area: company;
-                        }   
-
-                        .job-title {
-                            grid-area: job;
-                        }                    
-                    }
-                    &-back {
-                        transform: rotateX(180deg);
-                        grid-template-areas: 
-                            "top-left    . . . . .     top-right"
-                            ".          . . name . .           ."
-                            ".           . . . . .             ."
-                            ".         . . social . .          ."
-                            "bottom-left . . . . . bottom-right";
-
-                        .namecard {
-                            grid-area: name;
-                        }
-
-                        .social {
-                            grid-area: social;
-                            display: grid;
-                            grid-template-columns: repeat(3, auto);
-                        }
-                    }
-                    &-front,
-                    &-back {
-                        padding: 20px 10px 10px 10px;
-                        backface-visibility: hidden;
-                        &:after {
-                            color: darken(black, 15%);
-                        }                            
-                    }
-
-                    &-under,
-                    &-front,
-                    &-back,
-                    &:after,
-                    &:before {
-                        position: absolute;
-                        display: grid;
-                        width: 100%;
-                        height: 100%;
-                        left: 0;
-                        top: 0;
-                    }
+                &~.overlay {
+                    opacity: 0.8;
                 }
             }
+
+            &-front {
+                transform: rotateX(0deg);
+                grid-template-areas: 
+                    "top-left    . . . . .     top-right"
+                    ".         . . name . .            ."
+                    ".       . . company . .           ."
+                    ".         . . job . .             ."
+                    "bottom-left . . . . . bottom-right";
+        
+                .namecard {
+                    grid-area: name;
+                    font-weight: bold;
+                    font-size: 2.5rem;
+                }
+
+                .company {
+                    grid-area: company;
+                }   
+
+                .job-title {
+                    grid-area: job;
+                }                    
+            }
+            &-back {
+                transform: rotateX(180deg);
+                grid-template-areas: 
+                    "top-left    . . . . .     top-right"
+                    ".          . . name . .           ."
+                    ".           . . . . .             ."
+                    ".         . . social . .          ."
+                    "bottom-left . . . . . bottom-right";
+
+                .namecard {
+                    grid-area: name;
+                }
+
+                .social {
+                    grid-area: social;
+                    display: grid;
+                    grid-template-columns: repeat(3, auto);
+                }
+            }
+            &-front,
+            &-back {
+                padding: 20px 10px 10px 10px;
+                backface-visibility: hidden;
+                will-change: transform, scale;
+                &:after {
+                    color: darken(black, 15%);
+                }                            
+            }
+
+            &-under,
+            &-front,
+            &-back,
+            &:after,
+            &:before {
+                position: absolute;
+                display: grid;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+            }
         }
-    }    
-}
+
+    }
+}    
 
 .outer-arrow-btn {
-    padding-top: 40px;
+    padding-top: 5rem;
     .arrow-btn {
         display: block;
-        margin: auto;
+        z-index: 100;
         i {
-            font-size: 6em;
+            font-size: 6rem;
             color: $accent-color-2;
         }
     }
@@ -245,7 +257,7 @@ button.navbar-toggle:focus {
 
 .section-heading {
     color: $accent-color;
-    font-size: 2.5em;
+    font-size: 2.5rem;
     text-transform: uppercase;
     font-weight: bold;
 }
@@ -255,7 +267,10 @@ button.navbar-toggle:focus {
 }
 
 section {
-    padding: 2em 15%;
+    padding: 10%;
+    * {
+        margin: auto;
+    }
 }
 
 /*HOME*/
@@ -273,7 +288,7 @@ section {
             float: left;
             width: 200px;
             height: 200px;
-            margin: 2.4em 2.4em 2.4em 0;
+            margin: 2.4rem 2.4rem 2.4rem 0;
             border-radius: 50%;
         }
     }
@@ -286,7 +301,7 @@ section {
     align-items: center;  
 
     .portfolio-item {
-        padding: 1em;
+        padding: 1rem;
         
         .portfolio-container {
             display: block;
@@ -315,18 +330,18 @@ section {
                 
                 .portfolio-hover-content {
                     position: absolute;
-                    padding: 2em;
+                    padding: 2rem;
                     top: 50%;
                     transform: translate(0, -50%);
                     color: $light-color;
                     
                     .portfolio-title {
                         color: $accent-color-2;
-                        font-size: 2em;
+                        font-size: 2rem;
                     }
                     
                     .portfolio-description {
-                        font-size: 1.2em;
+                        font-size: 1.2rem;
                     }
 
                     .portfolio-modal-description {
@@ -346,7 +361,7 @@ section {
 #lightbox {
     display: none;
     position: fixed;
-    padding: 100px 1em 50px 1em;
+    padding: 100px 1rem 50px 1rem;
     left: 0;
     top: 0;
     width: 100%;
@@ -359,7 +374,7 @@ section {
         position: absolute;
         top: 55px;
         right: 25px;
-        font-size: 3em;
+        font-size: 3rem;
     }
     
     .close:hover,
@@ -371,10 +386,11 @@ section {
     
     .modal-content {
         position: relative;
-        background-color: $light-color;
+        background-color: $light-color-2;
         margin: auto;
         padding: 0;
-        width: 90%;
+        width: 720px;
+        max-width: 90vw;
         
         img {
             margin: auto;
@@ -384,16 +400,16 @@ section {
         .caption-container {
             margin: auto;
             width: 95%;
-            padding: 2em;
+            padding: 2rem;
             
             .portfolio-title {
                 color: $accent-color;
-                font-size: 2em;
+                font-size: 2rem;
             }
             
             .portfolio-description {
                 color: $dark-color;
-                font-size: 1.5em;
+                font-size: 1.5rem;
             }
         }
     }
@@ -401,20 +417,29 @@ section {
 
 /*EXPERIENCE*/
 #resume {
-    background-color: $primary-color;
-    color: $light-color;
+    background: radial-gradient(circle, rgba($primary-color, 0.5) -20%, rgba($dark-color, 0.5) 120%);    
+    color: $light-color-2;
+
+    .skills {
+        padding-bottom: 2rem;
+    }
+
+    .section-subheading {
+        padding-top: 1rem;
+    }
 }
 
 /*CONTACT*/
 #contact {
 
     .contacts {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-top: 1em;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        width: 100%;
+        grid-gap: 1rem;
+        font-size: 2rem;
         text-align: center;
-        font-size: 2em;
+        padding-top: 2rem;
     }
     
     i {
@@ -430,7 +455,7 @@ section {
 /*FOOTER*/
 #footer {
     width: 100%;
-    padding: 2em 0;
+    padding: 2rem 0;
     text-align: center;
     
     i {

@@ -26,34 +26,31 @@
 <body>
     <!-- HERO  -->
     <header class="hero">
-        <div class="content container-fluid">
-            <div class="header">
-                <div class="card-container">
-                    <div class='card-under one'></div>
-                    <div class='card-under two'></div>
-                    <button class='card'>
-                        <div class='card-front'>
-                            <p class='namecard'>Eunika Wu</p>
-                            <p class='company'>PDX Code Guild</p>
-                            <p class='job-title'>Web Dev</p>
-                        </div>
-                        <div class='card-back'>
-                            <p class='namecard'>nikawu.eu</p>
-                            <div class='social'>
-                                <a href="https://github.com/DED8IRD/" target="_blank" class="github" title="GitHub">
-                                    <i class="fa fa-github fa-2x" aria-hidden="true"></i>
-                                </a>            
-                                <a href="https://www.linkedin.com/in/eunika-wu/" target="_blank" class="linkedin" title="LinkedIn">
-                                    <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
-                                </a>            
-                                <a href="mailto:eunikawu@gmail.com" target="_top" class="email" title="Email">
-                                    <i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </button>
+        <div class="card-container">
+            <div class='card-under one'></div>
+            <div class='card-under two'></div>
+            <div class='overlay'></div>
+            <button class='card'>
+                <div class='card-front'>
+                    <p class='namecard'>Eunika Wu</p>
+                    <p class='company'>PDX Code Guild</p>
+                    <p class='job-title'>Web Dev</p>
                 </div>
-            </div>
+                <div class='card-back'>
+                    <p class='namecard'>nikawu.eu</p>
+                    <div class='social'>
+                        <a href="https://github.com/DED8IRD/" target="_blank" class="github" title="GitHub">
+                            <i class="fa fa-github fa-2x" aria-hidden="true"></i>
+                        </a>            
+                        <a href="https://www.linkedin.com/in/eunika-wu/" target="_blank" class="linkedin" title="LinkedIn">
+                            <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
+                        </a>            
+                        <a href="mailto:eunikawu@gmail.com" target="_top" class="email" title="Email">
+                            <i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </button>
             <div class="outer-arrow-btn">
                 <a class="btn btn-circle arrow-btn" href="#home">
                     <i class="fa fa-angle-double-down fa-2x animated" aria-hidden="true"></i>
@@ -61,6 +58,7 @@
             </div>
         </div>
     </header>  
+
     <!-- NAVBAR -->
     <nav class="navbar sticky-top navbar-light bg-faded" data-spy="affix" data-offset-top="720">
         <div class="container-fluid">
@@ -116,7 +114,7 @@
             <div class="container-fluid">
                 <header>
                     <div class="row">
-                        <div class="col-lg-12 text-center">
+                        <div class="text-center">
                             <h1 class="section-heading">Projects</h1>
                         </div>
                     </div>
@@ -254,35 +252,37 @@
             <div class="container-fluid">
                 <header>
                     <div class="row">
-                        <div class="col-lg-12 text-center">
+                        <div class="text-center">
                             <h1 class="section-heading">Skills</h1>
                         </div>
                     </div>
                 </header>
-                <h3 class="section-subheading">Languages:</h3>
-                <p>
-                    Python, JavaScript, Java, C++, C
-                </p>
-                <h3 class="section-subheading">Backend:</h3>
-                <p>            
-                    Django, Flask, Web2py, Node, Express, Spring 
-                </p>
-                <h3 class="section-subheading">Frontend:</h3>
-                <p>
-                    Vue, React, ES5/6/7/8, jQuery, 
-                    Bootstrap, Material UI, Semantic UI, 
-                    HTML, CSS, SASS/LESS
-                </p>
-                <h3 class="section-subheading">Databases:</h3>
-                <p>
-                    PostgreSQL, Oracle, MySQL,
-                    MongoDB, Mongoose                
-                </p>
-                <h3 class="section-subheading">Tools:</h3>
-                <p>
-                    Git, Android Studio, JIRA, NLTK, SpaCy,
-                    Adobe Illustrator & Photoshop
-                </p>
+                <div class='skills'>
+                    <h3 class="section-subheading">Languages:</h3>
+                    <p>
+                        Python, JavaScript, Java, C++, C
+                    </p>
+                    <h3 class="section-subheading">Backend:</h3>
+                    <p>            
+                        Django, Flask, Web2py, Node, Express, Spring 
+                    </p>
+                    <h3 class="section-subheading">Frontend:</h3>
+                    <p>
+                        Vue, React, ES5/6/7/8, jQuery, 
+                        Bootstrap, Material UI, Semantic UI, 
+                        HTML, CSS, SASS/LESS
+                    </p>
+                    <h3 class="section-subheading">Databases:</h3>
+                    <p>
+                        PostgreSQL, Oracle, MySQL,
+                        MongoDB, Mongoose                
+                    </p>
+                    <h3 class="section-subheading">Tools:</h3>
+                    <p>
+                        Git, Android Studio, JIRA, NLTK, SpaCy,
+                        Adobe Illustrator & Photoshop
+                    </p>
+                </div>
                 <a class="btn btn-primary btn-xl dl-resume-btn" target="_blank" href="https://drive.google.com/uc?export=download&id=1d7D_Iqjo9RtLw2CR96sVav01UYhuee_l">
                     Download Resume
                     <i class="fa fa-download" aria-hidden="true"></i>
@@ -294,32 +294,24 @@
             <div class="container-fluid">
                 <header>
                     <div class="row">
-                        <div class="col-lg-12 text-center">
+                        <div class="text-center">
                             <h1 class="section-heading">Connect with me</h1>
                         </div>
                     </div>
                 </header>
-                <div class="row contacts">
-                    <div class="col col-xs-3">
-                            <a href="mailto:eunikawu@gmail.com" target="_top" class="email" title="Email">
-                                <i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
-                            </a>
-                    </div>
-                    <div class="col col-xs-3">
-                            <a href="https://www.linkedin.com/in/eunika-wu/" target="_blank" class="linkedin" title="LinkedIn">
-                                <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
-                            </a>
-                    </div>
-                    <div class="col col-xs-3">
-                            <a href="https://codepen.io/DED8IRD/" target="_blank" class="codepen" title="CodePen">
-                                <i class="fa fa-codepen fa-2x" aria-hidden="true"></i>
-                            </a>            
-                    </div>
-                    <div class="col col-xs-3">
-                            <a href="https://github.com/DED8IRD/" target="_blank" class="github" title="GitHub">
-                                <i class="fa fa-github fa-2x" aria-hidden="true"></i>
-                            </a>            
-                    </div>
+                <div class="contacts">
+                    <a href="mailto:eunikawu@gmail.com" target="_top" class="email" title="Email">
+                        <i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://github.com/DED8IRD/" target="_blank" class="github" title="GitHub">
+                        <i class="fa fa-github fa-2x" aria-hidden="true"></i>
+                    </a>            
+                    <a href="https://codepen.io/DED8IRD/" target="_blank" class="codepen" title="CodePen">
+                        <i class="fa fa-codepen fa-2x" aria-hidden="true"></i>
+                    </a>            
+                    <a href="https://www.linkedin.com/in/eunika-wu/" target="_blank" class="linkedin" title="LinkedIn">
+                        <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
+                    </a>
                 </div>
             </div>
             <div class="outer-arrow-btn">
