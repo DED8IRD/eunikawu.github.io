@@ -16,6 +16,7 @@ body, html {
     font-family: $font-stack;
     height: 100%;
     width: 100%;
+    scroll-behavior: smooth;    
 }
 
 /*HERO*/
@@ -53,12 +54,12 @@ body, html {
         outline: none;
         border: none;
         border-radius: 1rem;
-        transition: all 0.6s ease;
+        transition: all 0.7s ease;
         will-change: transform;
     }   
 
     .card-under {
-        box-shadow: 1rem 1rem 1rem rgba(black, .3);
+        box-shadow: 1rem 2rem 3rem rgba(black, .4);
 
         &.one {
             transform: rotateX(60deg) rotateY(1deg) rotateZ(45deg) translateZ(-1rem);
@@ -188,7 +189,7 @@ body, html {
 
 /*NAV*/
 .navbar {
-    background-color: RGBA(255,255,255,0.9);
+    background-color: rgba(white, 0.9);
     border: none;
     border-radius: 0;
     letter-spacing: 2px;
@@ -260,6 +261,7 @@ button.navbar-toggle:focus {
     font-size: 2.5rem;
     text-transform: uppercase;
     font-weight: bold;
+    padding-bottom: 2rem;
 }
 
 .section-subheading {
@@ -267,28 +269,34 @@ button.navbar-toggle:focus {
 }
 
 section {
-    padding: 10%;
+    padding: 7.5% 10%;
     * {
         margin: auto;
     }
 }
 
 /*HOME*/
-#home {
-    padding-top: 60px;
-    
+#home {   
     #about-me {
-        
-        p {
-            padding-top: 50px;
-            text-align: justify;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .description {
+            flex: 0 0 75%;
+            p {
+                text-align: justify;
+                padding-bottom: 1rem;
+            }       
         }
 
         #avatar {
-            float: left;
+            margin: auto;
+            padding: 1em;
+            align-self: flex-start;
             width: 200px;
             height: 200px;
-            margin: 2.4rem 2.4rem 2.4rem 0;
             border-radius: 50%;
         }
     }
@@ -436,6 +444,7 @@ section {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         width: 100%;
+        max-width: 30rem;
         grid-gap: 1rem;
         font-size: 2rem;
         text-align: center;

@@ -1,7 +1,13 @@
+function vh(v) {
+  var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+  return (v * h) / 100;
+}
+
 $(document).ready(function() {
 
     // Add scrollspy to <body>
-    var navOffset = $('.navbar').height();
+    const navOffset = $('.navbar').height();
+    $('#navbar').attr('data-offset-top', vh(100) - navOffset)
     $('body').scrollspy({target: ".navbar", offset: navOffset});   
     
     // Smooth scroll to anchors
@@ -14,8 +20,8 @@ $(document).ready(function() {
                 && 
                 location.hostname == this.hostname
             ) {
-                var hash = this.hash;
-                var target = $(hash);
+                const hash = this.hash;
+                let target = $(hash);
                 target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
                 if (target.length) {
                     event.preventDefault();
@@ -35,11 +41,11 @@ $(document).ready(function() {
     
     // Lightbox for portfolio items
     $(document).on('click', '.portfolio-container', function(event) {
-        var $lightbox = $("<div id='lightbox'></div>");
-        var $close = $("<span class='close'>&times;</span>");
-        var $contents = $("<div class='modal-content'></div>");
-        var $caption = $("<div class='caption-container'></div>");
-        var $img = $(this).find('img')[0].outerHTML;
+        const $lightbox = $("<div id='lightbox'></div>");
+        const $close = $("<span class='close'>&times;</span>");
+        const $contents = $("<div class='modal-content'></div>");
+        const $caption = $("<div class='caption-container'></div>");
+        const $img = $(this).find('img')[0].outerHTML;
         $caption
             .append($(this).find('div.portfolio-hover-content').html());
         $lightbox
