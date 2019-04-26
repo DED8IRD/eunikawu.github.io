@@ -26,8 +26,8 @@ body, html {
 .hero .card:focus,
 .hero .card:before,
 .hero .card:after {
-  width: 35rem;
-  height: 20rem;
+  width: 26.25rem;
+  height: 15rem;
   max-width: 70vw;
   max-height: 40vw;
   outline: none;
@@ -52,6 +52,7 @@ body, html {
   background-color: white;
   font-family: "Open sans", Helvetica, sans-serif;
   text-transform: lowercase;
+  font-size: calc(12px + (20 - 12) * ((70vw) / (1600 - 300)));
   box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.2);
   transform: rotateX(60deg) rotateY(1deg) rotateZ(45deg);
   transform-style: preserve-3d;
@@ -76,7 +77,7 @@ body, html {
 .hero .card-container .card-front .namecard {
   grid-area: name;
   font-weight: bold;
-  font-size: 2.5rem;
+  font-size: calc(18px + (30 - 18) * ((70vw) / (1600 - 300)));
 }
 .hero .card-container .card-front .company {
   grid-area: company;
@@ -97,7 +98,7 @@ body, html {
   grid-template-columns: repeat(3, auto);
 }
 .hero .card-container .card-front, .hero .card-container .card-back {
-  padding: 20px 10px 10px 10px;
+  padding: 1.5rem 1rem 1rem 1rem;
   backface-visibility: hidden;
   will-change: transform, scale;
 }
