@@ -42,17 +42,17 @@ $(document).ready(function() {
     // Lightbox for portfolio items
     $(document).on('click', '.portfolio-container', function(event) {
         const $lightbox = $("<div id='lightbox'></div>");
-        const $close = $("<span class='close'>&times;</span>");
-        const $contents = $("<div class='modal-content'></div>");
+        const $close = $("<p class='close'>&times;</p>");
+        const $contents = $("<div class='modal-dialogue modal-content'></div>");
         const $caption = $("<div class='caption-container'></div>");
         const $img = $(this).find('img')[0].outerHTML;
         $caption
             .append($(this).find('div.portfolio-hover-content').html());
         $lightbox
-            .append($close)
             .append($contents
                 .append($img)
-                .append($caption));
+                .append($close)
+                .append($caption))
         $('body').append($lightbox);
         $lightbox.fadeIn('fast');
         $lightbox.click(function() {
