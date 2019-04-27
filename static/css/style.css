@@ -20,12 +20,12 @@ body, html {
   background-size: cover;
 }
 .hero .card-container,
-.hero .card,
-.hero .card-under,
-.hero .card:hover,
-.hero .card:focus,
-.hero .card:before,
-.hero .card:after {
+.hero .biz-card,
+.hero .biz-card-under,
+.hero .biz-card:hover,
+.hero .biz-card:focus,
+.hero .biz-card:before,
+.hero .biz-card:after {
   width: 26.25rem;
   height: 15rem;
   max-width: 70vw;
@@ -36,19 +36,19 @@ body, html {
   transition: all 0.7s ease;
   will-change: transform;
 }
-.hero .card-under {
+.hero .biz-card-under {
   box-shadow: 1rem 2rem 3rem rgba(0, 0, 0, 0.4);
 }
-.hero .card-under.one {
+.hero .biz-card-under.one {
   transform: rotateX(60deg) rotateY(1deg) rotateZ(45deg) translateZ(-1rem);
 }
-.hero .card-under.two {
+.hero .biz-card-under.two {
   transform: rotateX(60deg) rotateY(1deg) rotateZ(45deg) translateZ(-2rem);
 }
 .hero .card-container {
   position: relative;
 }
-.hero .card-container .card {
+.hero .card-container .biz-card {
   background-color: white;
   font-family: "Open sans", Helvetica, sans-serif;
   text-transform: lowercase;
@@ -58,54 +58,54 @@ body, html {
   transform-style: preserve-3d;
   perspective: 150rem;
 }
-.hero .card-container .card:hover {
+.hero .card-container .biz-card:hover {
   transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(1rem) translateY(1rem) scale(1.2);
 }
-.hero .card-container .card:focus {
+.hero .card-container .biz-card:focus {
   transform: rotateX(-180deg) rotateY(0deg) rotateZ(0deg) translateZ(1rem) translateY(-1rem) scale(1.2);
 }
-.hero .card-container .card:hover, .hero .card-container .card:focus {
+.hero .card-container .biz-card:hover, .hero .card-container .biz-card:focus {
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
 }
-.hero .card-container .card:hover ~ .overlay, .hero .card-container .card:focus ~ .overlay {
+.hero .card-container .biz-card:hover ~ .overlay, .hero .card-container .biz-card:focus ~ .overlay {
   opacity: 0.8;
 }
-.hero .card-container .card-front {
+.hero .card-container .biz-card-front {
   transform: rotateX(0deg);
   grid-template-areas: "top-left    . . . . .     top-right" ".         . . name . .            ." ".       . . company . .           ." ".         . . job . .             ." "bottom-left . . . . . bottom-right";
 }
-.hero .card-container .card-front .namecard {
+.hero .card-container .biz-card-front .name-card {
   grid-area: name;
   font-weight: bold;
   font-size: calc(18px + (30 - 18) * ((70vw) / (1600 - 300)));
 }
-.hero .card-container .card-front .company {
+.hero .card-container .biz-card-front .company {
   grid-area: company;
 }
-.hero .card-container .card-front .job-title {
+.hero .card-container .biz-card-front .job-title {
   grid-area: job;
 }
-.hero .card-container .card-back {
+.hero .card-container .biz-card-back {
   transform: rotateX(180deg);
   grid-template-areas: "top-left    . . . . .     top-right" ".          . . name . .           ." ".           . . . . .             ." ".         . . social . .          ." "bottom-left . . . . . bottom-right";
 }
-.hero .card-container .card-back .namecard {
+.hero .card-container .biz-card-back .name-card {
   grid-area: name;
 }
-.hero .card-container .card-back .social {
+.hero .card-container .biz-card-back .social {
   grid-area: social;
   display: grid;
   grid-template-columns: repeat(3, auto);
 }
-.hero .card-container .card-front, .hero .card-container .card-back {
+.hero .card-container .biz-card-front, .hero .card-container .biz-card-back {
   padding: 1.5rem 1rem 1rem 1rem;
   backface-visibility: hidden;
   will-change: transform, scale;
 }
-.hero .card-container .card-front:after, .hero .card-container .card-back:after {
+.hero .card-container .biz-card-front:after, .hero .card-container .biz-card-back:after {
   color: black;
 }
-.hero .card-container .card-under, .hero .card-container .card-front, .hero .card-container .card-back, .hero .card-container .card:after, .hero .card-container .card:before {
+.hero .card-container .biz-card-under, .hero .card-container .biz-card-front, .hero .card-container .biz-card-back, .hero .card-container .biz-card:after, .hero .card-container .biz-card:before {
   position: absolute;
   display: grid;
   width: 100%;
@@ -136,62 +136,44 @@ body, html {
 
 /*NAV*/
 .navbar {
+  position: fixed;
+  width: 100vw;
+  top: 0;
   background-color: rgba(255, 255, 255, 0.9);
   border: none;
   border-radius: 0;
   letter-spacing: 2px;
   text-transform: uppercase;
   font-weight: bold;
+  /*Override navbar defaults*/
 }
-
-/*Override navbar defaults*/
-.navbar-brand {
+.navbar .navbar-brand {
   color: #FFA630;
 }
-
-.navbar-nav > li > a {
+.navbar .navbar-nav .nav-item.active {
+  color: #DB6200 !important;
+}
+.navbar .navbar-nav.open a:hover, .navbar .navbar-nav.open a:focus {
+  color: #DB6200;
+  background-color: RGBA(255, 255, 255, 0);
+}
+.navbar .navbar-nav .navbar-toggler .navbar-toggler-icon {
   color: #777;
 }
-
-button.navbar-toggle span {
-  background: #777;
-}
-
-button.navbar-toggle:focus span {
-  background: #DB6200;
-}
-
-button.navbar-toggle:focus {
+.navbar .navbar-nav .navbar-toggler:focus {
   background: RGBA(0, 0, 0, 0.05);
   border-radius: 10px;
 }
-
-.navbar-nav > li > a:focus {
-  background-color: RGBA(255, 255, 255, 0);
+.navbar .navbar-nav .navbar-toggler:focus .navbar-toggler-icon {
+  background: #DB6200;
 }
-
-.navbar-brand:hover,
-.navbar-brand:focus,
-.navbar-nav > li > a:hover {
+.navbar .navbar-brand:hover li > a:hover,
+.navbar .navbar-brand:focus li > a:hover,
+.navbar .navbar-nav li > a:hover {
   color: #DB6200;
   background-color: RGBA(255, 255, 255, 0);
 }
-
-.navbar-nav > .active > a,
-.navbar-nav > .active > a:hover,
-.navbar-nav > .active > a:focus {
-  color: #DB6200;
-  background-color: RGBA(255, 255, 255, 0);
-}
-
-.navbar-nav > .open > a,
-.navbar-nav > .open > a:hover,
-.navbar-nav > .open > a:focus {
-  color: #DB6200;
-  background-color: RGBA(255, 255, 255, 0);
-}
-
-.affix {
+.navbar .affix {
   top: 0;
   width: 100%;
   z-index: 9999 !important;
@@ -359,6 +341,7 @@ section * {
 }
 #resume .skills {
   padding-bottom: 2rem;
+  color: #DB6200;
 }
 #resume .section-subheading {
   padding-top: 1rem;

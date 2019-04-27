@@ -41,12 +41,12 @@ body, html {
     // }
 
     .card-container,
-    .card,
-    .card-under,
-    .card:hover,
-    .card:focus,
-    .card:before,
-    .card:after {
+    .biz-card,
+    .biz-card-under,
+    .biz-card:hover,
+    .biz-card:focus,
+    .biz-card:before,
+    .biz-card:after {
         width: 26.25rem;
         height: 15rem;
         max-width: 70vw;
@@ -58,7 +58,7 @@ body, html {
         will-change: transform;
     }   
 
-    .card-under {
+    .biz-card-under {
         box-shadow: 1rem 2rem 3rem rgba(black, .4);
 
         &.one {
@@ -72,7 +72,7 @@ body, html {
     .card-container {
         position: relative;  
 
-        .card {
+        .biz-card {
             background-color: white;
             font-family: $cardfont;
             text-transform: lowercase;
@@ -108,7 +108,7 @@ body, html {
                     ".         . . job . .             ."
                     "bottom-left . . . . . bottom-right";
         
-                .namecard {
+                .name-card {
                     grid-area: name;
                     font-weight: bold;
                     font-size: calc(18px + (30 - 18) * ((70vw) / (1600 - 300)));
@@ -131,7 +131,7 @@ body, html {
                     ".         . . social . .          ."
                     "bottom-left . . . . . bottom-right";
 
-                .namecard {
+                .name-card {
                     grid-area: name;
                 }
 
@@ -191,65 +191,70 @@ body, html {
 
 /*NAV*/
 .navbar {
+    position: fixed;
+    width: 100vw;
+    top: 0;
     background-color: rgba(white, 0.9);
     border: none;
     border-radius: 0;
     letter-spacing: 2px;
     text-transform: uppercase; 
     font-weight: bold;
-}
 
-/*Override navbar defaults*/
-.navbar-brand {
-    color: $accent-color-2;
-}
+    /*Override navbar defaults*/
+    .navbar-brand {
+        color: $accent-color-2;
+    }
 
-.navbar-nav > li > a {
-    color: $primary-color;
-}
+    .navbar-nav {
+        .nav-item {            
+            &.active {
+                color: $accent-color !important;
+            }
+        }
 
-button.navbar-toggle span {
-    background: $primary-color;
-}
+        &.open a {
+            &:hover,
+            &:focus {
+                color: $accent-color;
+                background-color: RGBA(255,255,255,0);
+            }
+        }        
 
-button.navbar-toggle:focus span {
-    background: $accent-color;
-}
+        .navbar-toggler {
+            .navbar-toggler-icon {
+                color: $primary-color;
+            }
+            &:focus {
+                background: RGBA(0,0,0,0.05);
+                border-radius: 10px;
+            }
+            &:focus .navbar-toggler-icon {
+                background: $accent-color;
+            }
+        }
 
-button.navbar-toggle:focus {
-    background: RGBA(0,0,0,0.05);
-    border-radius: 10px;
-}
+        // li > a {
+        //     &:focus {
+        //        background-color: RGBA(255,255,255,0);
+        //     }
+        // }
+    }
 
-.navbar-nav > li > a:focus {
-    background-color: RGBA(255,255,255,0);
-}
+    .navbar-brand:hover, 
+    .navbar-brand:focus,
+    .navbar-nav {
+        li > a:hover {
+            color: $accent-color;
+            background-color: RGBA(255,255,255,0);
+        } 
+    }
 
-.navbar-brand:hover, 
-.navbar-brand:focus,
-.navbar-nav > li > a:hover {
-    color: $accent-color;
-    background-color: RGBA(255,255,255,0);
-}
-
-.navbar-nav > .active > a,
-.navbar-nav > .active > a:hover,
-.navbar-nav > .active > a:focus {
-    color: $accent-color;
-    background-color: RGBA(255,255,255,0);
-}
-
-.navbar-nav > .open > a,
-.navbar-nav > .open > a:hover,
-.navbar-nav > .open > a:focus {
-    color: $accent-color;
-    background-color: RGBA(255,255,255,0);
-}
-
-.affix {
-    top: 0;
-    width: 100%;
-    z-index: 9999 !important;
+    .affix {
+        top: 0;
+        width: 100%;
+        z-index: 9999 !important;
+    }
 }
 
 /*BODY*/
@@ -434,6 +439,7 @@ section {
 
     .skills {
         padding-bottom: 2rem;
+        color: $accent-color;
     }
 
     .section-subheading {
