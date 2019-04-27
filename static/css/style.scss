@@ -229,31 +229,7 @@ body, html {
                 background: RGBA(0,0,0,0.05);
                 border-radius: 10px;
             }
-            &:focus .navbar-toggler-icon {
-                background: $accent-color;
-            }
         }
-
-        // li > a {
-        //     &:focus {
-        //        background-color: RGBA(255,255,255,0);
-        //     }
-        // }
-    }
-
-    .navbar-brand:hover, 
-    .navbar-brand:focus,
-    .navbar-nav {
-        li > a:hover {
-            color: $accent-color;
-            background-color: RGBA(255,255,255,0);
-        } 
-    }
-
-    .affix {
-        top: 0;
-        width: 100%;
-        z-index: 9999 !important;
     }
 }
 

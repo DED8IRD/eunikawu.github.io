@@ -164,20 +164,6 @@ body, html {
   background: RGBA(0, 0, 0, 0.05);
   border-radius: 10px;
 }
-.navbar .navbar-nav .navbar-toggler:focus .navbar-toggler-icon {
-  background: #DB6200;
-}
-.navbar .navbar-brand:hover li > a:hover,
-.navbar .navbar-brand:focus li > a:hover,
-.navbar .navbar-nav li > a:hover {
-  color: #DB6200;
-  background-color: RGBA(255, 255, 255, 0);
-}
-.navbar .affix {
-  top: 0;
-  width: 100%;
-  z-index: 9999 !important;
-}
 
 /*BODY*/
 .page-content {
