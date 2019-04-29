@@ -425,11 +425,29 @@ section {
         .skill,
         .skill * {
             margin: unset;
-        }
-    }
 
-    .section-subheading {
-        padding-top: 1rem;
+            .card-header {
+                color: $accent-color-2;
+
+                i {
+                    color: $accent-color;
+                }
+            }
+
+            .subsection-heading {
+                padding-right: .5rem;
+            }
+        }
+
+        .skill {
+            margin: 1rem;
+            min-width: 180px;
+            box-shadow: 0 1rem 2rem rgba(black, .10), 0 1rem 2rem rgba(black, .1);            
+        }
+
+        .skill-title {
+            padding-left: .75rem;
+        }
     }
 }
 

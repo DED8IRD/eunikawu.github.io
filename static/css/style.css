@@ -336,8 +336,25 @@ section * {
 #resume .skills .skill * {
   margin: unset;
 }
-#resume .section-subheading {
-  padding-top: 1rem;
+#resume .skills .skill .card-header,
+#resume .skills .skill * .card-header {
+  color: #FFA630;
+}
+#resume .skills .skill .card-header i,
+#resume .skills .skill * .card-header i {
+  color: #DB6200;
+}
+#resume .skills .skill .subsection-heading,
+#resume .skills .skill * .subsection-heading {
+  padding-right: 0.5rem;
+}
+#resume .skills .skill {
+  margin: 1rem;
+  min-width: 180px;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1), 0 1rem 2rem rgba(0, 0, 0, 0.1);
+}
+#resume .skills .skill-title {
+  padding-left: 0.75rem;
 }
 
 /*CONTACT*/
