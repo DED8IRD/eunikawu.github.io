@@ -355,7 +355,7 @@ section {
 
 /*PORTFOLIO MODAL*/
 #lightbox {
-    display: none;
+    display: grid;
     position: fixed;
     padding: 2rem 1rem;
     left: 0;
@@ -364,7 +364,7 @@ section {
     height: 100vh;
     background-color: RGBA(0,0,0,0.9);
     overflow: auto;
-    
+
     .close {
         color: $light-color;
         position: absolute;
@@ -420,7 +420,7 @@ section {
 
     .skills {
         padding-bottom: 2rem;
-        color: $accent-color;
+        color: $primary-color;
 
         .skill,
         .skill * {
@@ -429,12 +429,18 @@ section {
             .card-header {
                 color: $accent-color-2;
 
+                .frontend-icon {
+                    font-weight: bold;
+                }
+
+                .frontend-icon,
                 i {
                     color: $accent-color;
                 }
             }
 
             .subsection-heading {
+                color: $accent-color;
                 padding-right: .5rem;
             }
         }

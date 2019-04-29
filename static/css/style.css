@@ -272,7 +272,7 @@ section * {
 
 /*PORTFOLIO MODAL*/
 #lightbox {
-  display: none;
+  display: grid;
   position: fixed;
   padding: 2rem 1rem;
   left: 0;
@@ -330,7 +330,7 @@ section * {
 }
 #resume .skills {
   padding-bottom: 2rem;
-  color: #DB6200;
+  color: #777;
 }
 #resume .skills .skill,
 #resume .skills .skill * {
@@ -340,12 +340,19 @@ section * {
 #resume .skills .skill * .card-header {
   color: #FFA630;
 }
+#resume .skills .skill .card-header .frontend-icon,
+#resume .skills .skill * .card-header .frontend-icon {
+  font-weight: bold;
+}
+#resume .skills .skill .card-header .frontend-icon,
 #resume .skills .skill .card-header i,
+#resume .skills .skill * .card-header .frontend-icon,
 #resume .skills .skill * .card-header i {
   color: #DB6200;
 }
 #resume .skills .skill .subsection-heading,
 #resume .skills .skill * .subsection-heading {
+  color: #DB6200;
   padding-right: 0.5rem;
 }
 #resume .skills .skill {
