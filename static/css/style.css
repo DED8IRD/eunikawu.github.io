@@ -114,15 +114,13 @@ body, html {
   top: 0;
 }
 
-.outer-arrow-btn {
-  padding-top: 5rem;
-}
 .outer-arrow-btn .arrow-btn {
+  padding: 5rem;
   display: block;
   z-index: 100;
 }
 .outer-arrow-btn .arrow-btn i {
-  font-size: 6rem;
+  font-size: 5rem;
   color: #FFA630;
 }
 .outer-arrow-btn .arrow-btn:hover,
@@ -173,7 +171,7 @@ body, html {
 
 .section-heading {
   color: #DB6200;
-  font-size: 2.5rem;
+  font-size: 2rem;
   text-transform: uppercase;
   font-weight: bold;
   padding-bottom: 2rem;
@@ -183,7 +181,13 @@ body, html {
   color: #FFA630;
 }
 
+.subsection-heading {
+  color: #DB6200;
+  font-weight: bold;
+}
+
 section {
+  margin: auto;
   padding: 7.5% 10%;
 }
 section * {
@@ -205,7 +209,6 @@ section * {
   padding-bottom: 1rem;
 }
 #home #about-me #avatar {
-  margin: auto;
   padding: 1em;
   align-self: flex-start;
   width: 200px;
@@ -328,6 +331,10 @@ section * {
 #resume .skills {
   padding-bottom: 2rem;
   color: #DB6200;
+}
+#resume .skills .skill,
+#resume .skills .skill * {
+  margin: unset;
 }
 #resume .section-subheading {
   padding-top: 1rem;

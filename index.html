@@ -17,7 +17,7 @@
      STYLESHEETS AND SCRIPTS
     ============================== -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="static/css/style.css">
 </head>
 <body>
@@ -37,20 +37,20 @@
                     <p class='name-card'>nikawu.eu</p>
                     <div class='social'>
                         <a href="https://github.com/DED8IRD/" target="_blank" class="github" title="GitHub">
-                            <i class="fa fa-github fa-2x" aria-hidden="true"></i>
+                            <i class="fab fa-github fa-2x" aria-hidden="true"></i>
                         </a>            
                         <a href="https://www.linkedin.com/in/eunika-wu/" target="_blank" class="linkedin" title="LinkedIn">
-                            <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
+                            <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
                         </a>            
                         <a href="mailto:eunikawu@gmail.com" target="_top" class="email" title="Email">
-                            <i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
+                            <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
             </button>
             <div class="outer-arrow-btn">
                 <a class="btn btn-circle arrow-btn" href="#home">
-                    <i class="fa fa-angle-double-down fa-2x animated" aria-hidden="true"></i>
+                    <i class="fas fa-angle-double-down fa-2x animated" aria-hidden="true"></i>
                 </a>
             </div>
         </div>
@@ -59,7 +59,7 @@
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" data-spy="affix">
         <a class="navbar-brand" href="#">
-            <i class="fa fa-terminal cmd-icon" aria-hidden="true"></i>                    
+            <i class="fas fa-terminal cmd-icon" aria-hidden="true"></i>                    
             Eunika Wu
         </a>  
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -249,43 +249,134 @@
                         </div>
                     </div>
                 </header>
-                <div class='skills'>
-                    <!-- <div class="card">
-                        <div class="card-body">
-                            <div class="card-header section-subheading">Languages</div>                        
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Python</li>
-                                <li class="list-group-item">JavaScript (ES6/7/8)</li>
-                                <li class="list-group-item">Java</li>
-                                <li class="list-group-item">C++</li>
-                                <li class="list-group-item">C</li>
-                            </ul>
-                        </div>
-                    </div> -->
-                    <h3 class="section-subheading">Backend:</h3>
-                    <p>            
-                        Django, Flask, Web2py, Node, Express, Spring 
-                    </p>
-                    <h3 class="section-subheading">Frontend:</h3>
-                    <p>
-                        Vue, React, ES5/6/7/8, jQuery, 
-                        Bootstrap, Material UI, Semantic UI, 
-                        HTML, CSS, SASS/LESS
-                    </p>
-                    <h3 class="section-subheading">Databases:</h3>
-                    <p>
-                        PostgreSQL, Oracle, MySQL,
-                        MongoDB, Mongoose                
-                    </p>
-                    <h3 class="section-subheading">Tools:</h3>
-                    <p>
-                        Git, Android Studio, JIRA, NLTK, SpaCy,
-                        Adobe Illustrator & Photoshop
-                    </p>
+                <div class='card-group skills'>
+                    <div class="card skill">
+                        <h3 class="card-header">
+                            <i class="fas fa-language"></i>
+                        </h3>
+                        <h5 class="card-title section-subheading">
+                            Languages
+                        </h5>                    
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <span class="subsection-heading">Proficient:</span>
+                                <p class="card-text">
+                                    Python,
+                                    JavaScript (ES6/7/8), 
+                                    Java
+                                </p>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="subsection-heading">Prior Exposure:</span>
+                                <p class="card-text">
+                                    C++, C
+                                </p>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="subsection-heading">Spoken:</span>
+                                <p class="card-text">
+                                    English,
+                                    Mandarin (conversational)
+                                </p>
+                            </li>                                
+                    </div>
+                    <div class="card skill">
+                        <h3 class="card-header">
+                            &lt;/&gt;
+                        </h3>    
+                        <h5 class="card-title section-subheading">
+                            Frontend
+                        </h5>                    
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <span class="subsection-heading">Frontend frameworks:</span>
+                                <p class="card-text">
+                                    ReactJS,
+                                    VueJS, 
+                                    MeteorJS
+                                </p>
+                            </li>
+                            <li class="list-group-item">
+                                <p class="card-text">
+                                    HTML5/CSS3/JS
+                                </p>
+                            </li>
+                            <li class="list-group-item">
+                                <p class="card-text">
+                                    jQuery, 
+                                    Bootstrap,
+                                    Material UI,
+                                    Semantic UI,
+                                    SASS/LESS
+                                </p>
+                            </li>                                
+                    </div>
+                    <div class="card skill">
+                        <h3 class="card-header">
+                            <i class="fa fa-database"></i>
+                        </h3>    
+                        <h5 class="card-title section-subheading">
+                            Databases
+                        </h5>                    
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <span class="subsection-heading">SQL</span>
+                                <p class="card-text">
+                                    PostgreSQL,
+                                    MySQL,
+                                    Oracle
+                                </p>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="subsection-heading">NoSQL</span>
+                                <p class="card-text">
+                                    MongoDB
+                                </p>
+                            </li>
+                        </ul>                            
+                    </div>
+                    <div class="card skill">
+                        <h3 class="card-header">
+                            <i class="fa fa-tools"></i>
+                        </h3>    
+                        <h5 class="card-title section-subheading">
+                            Tools
+                        </h5>                    
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <span class="subsection-heading">Version Control</span>
+                                <p class="card-text">
+                                    Git, GitHub, BitBucket
+                                </p>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="subsection-heading">NLP</span>
+                                <p class="card-text">
+                                    NLTK, SpaCy
+                                </p>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="subsection-heading">Design</span>
+                                <p class="card-text">
+                                    Adobe Illustrator & Photoshop
+                                </p>
+                            </li>
+                            <li class="list-group-item">
+                                <p class="card-text">
+                                    Agile development, JIRA
+                                </p>
+                            </li>
+                            <li class="list-group-item">
+                                <p class="card-text">
+                                    Android Studio
+                                </p>
+                            </li>
+                        </ul>                            
+                    </div>
                 </div>
                 <a class="btn btn-primary btn-xl dl-resume-btn" target="_blank" href="https://drive.google.com/uc?export=download&id=1d7D_Iqjo9RtLw2CR96sVav01UYhuee_l">
                     Download Resume
-                    <i class="fa fa-download" aria-hidden="true"></i>
+                    <i class="fas fa-download" aria-hidden="true"></i>
                 </a>            
             </div>
         </section>
@@ -301,29 +392,29 @@
                 </header>
                 <div class="contacts">
                     <a href="mailto:eunikawu@gmail.com" target="_top" class="email" title="Email">
-                        <i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
+                        <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
                     </a>
                     <a href="https://github.com/DED8IRD/" target="_blank" class="github" title="GitHub">
-                        <i class="fa fa-github fa-2x" aria-hidden="true"></i>
+                        <i class="fab fa-github fa-2x" aria-hidden="true"></i>
                     </a>            
                     <a href="https://codepen.io/DED8IRD/" target="_blank" class="codepen" title="CodePen">
-                        <i class="fa fa-codepen fa-2x" aria-hidden="true"></i>
+                        <i class="fab fa-codepen fa-2x" aria-hidden="true"></i>
                     </a>            
                     <a href="https://www.linkedin.com/in/eunika-wu/" target="_blank" class="linkedin" title="LinkedIn">
-                        <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
+                        <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
                     </a>
                 </div>
             </div>
             <div class="outer-arrow-btn">
                 <a href="#" class="btn btn-circle arrow-btn">
-                    <i class="fa fa-angle-double-up fa-2x animated"></i>
+                    <i class="fas fa-angle-double-up fa-2x animated"></i>
                 </a>
             </div>
         </section>
     </div>
     <!-- FOOTER -->
     <footer id="footer">
-        <p>Made with <i class="fa fa-heart" aria-hidden="true"></i> by Eunika Wu (2018)</p>
+        <p>Made with <i class="fas fa-heart" aria-hidden="true"></i> by Eunika Wu (2018)</p>
     </footer>
 
 

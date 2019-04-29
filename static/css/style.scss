@@ -169,12 +169,12 @@ body, html {
 }    
 
 .outer-arrow-btn {
-    padding-top: 5rem;
     .arrow-btn {
+        padding: 5rem;
         display: block;
         z-index: 100;
         i {
-            font-size: 6rem;
+            font-size: 5rem;
             color: $accent-color-2;
         }
     }
@@ -241,7 +241,7 @@ body, html {
 
 .section-heading {
     color: $accent-color;
-    font-size: 2.5rem;
+    font-size: 2rem;
     text-transform: uppercase;
     font-weight: bold;
     padding-bottom: 2rem;
@@ -251,7 +251,13 @@ body, html {
     color: $accent-color-2;
 }
 
+.subsection-heading {
+    color: $accent-color;
+    font-weight: bold;
+}
+
 section {
+    margin: auto;
     padding: 7.5% 10%;
     * {
         margin: auto;
@@ -275,7 +281,6 @@ section {
         }
 
         #avatar {
-            margin: auto;
             padding: 1em;
             align-self: flex-start;
             width: 200px;
@@ -416,6 +421,11 @@ section {
     .skills {
         padding-bottom: 2rem;
         color: $accent-color;
+
+        .skill,
+        .skill * {
+            margin: unset;
+        }
     }
 
     .section-subheading {
