@@ -1,8 +1,10 @@
 /*IMPORTS*/
+@import url(https://fonts.googleapis.com/css?family=Signika);
 @import url(https://fonts.googleapis.com/css?family=Cabin);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu);
 /*VARIABLES*/
 body, html {
-  font-family: Cabin, "Open sans", sans-serif;
+  font-family: Cabin, Helvetica, sans-serif;
   height: 100%;
   width: 100%;
   scroll-behavior: smooth;
@@ -50,7 +52,7 @@ body, html {
 }
 .hero .card-container .biz-card {
   background-color: white;
-  font-family: "Open sans", Helvetica, sans-serif;
+  font-family: Ubuntu, Helvetica, sans-serif;
   text-transform: lowercase;
   font-size: calc(12px + (20 - 12) * ((70vw) / (1600 - 300)));
   box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.2);
@@ -137,7 +139,7 @@ body, html {
   position: fixed;
   width: 100vw;
   top: 0;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(119, 119, 119, 0.9);
   border: none;
   border-radius: 0;
   letter-spacing: 2px;
@@ -170,6 +172,7 @@ body, html {
 }
 
 .section-heading {
+  font-family: Signika, Helvetica, sans-serif;
   color: #DB6200;
   font-size: 2rem;
   text-transform: uppercase;
@@ -280,7 +283,7 @@ section * {
   width: 100vw;
   height: 100vh;
   background-color: RGBA(0, 0, 0, 0.9);
-  overflow: auto;
+  overflow-y: auto;
 }
 #lightbox .close {
   color: #CEDADA;

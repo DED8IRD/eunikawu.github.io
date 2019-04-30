@@ -6,8 +6,8 @@ function vh(v) {
 
 // Scroll reveal child elements
 function revealChildren(elements) {
-    ScrollReveal().reveal(...elements, {
-        origin: 'left',
+    sr.reveal(...elements, {
+        origin: 'bottom',
         viewFactor: 1,
     }, 500);        
 }
@@ -54,16 +54,16 @@ $(document).ready(function() {
     sr.reveal('section')
     sr.reveal('.projects > .portfolio-item', {
         origin: 'left',
-        distance: '2rem',
+        distance: '1.5rem',
         interval: 200,
         duration: 600,
         easing: "ease-in-out",
     })    
     sr.reveal('.skills > .skill', {
         origin: 'right',
-        distance: '2rem',
-        interval: 200,
-        duration: 600,
+        distance: '10rem',
+        interval: 300,
+        duration: 700,
         easing: "ease-in-out",        
         afterReveal: () => revealChildren($('.skill'))
     })

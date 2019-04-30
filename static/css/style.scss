@@ -1,9 +1,12 @@
 /*IMPORTS*/
+@import url(https://fonts.googleapis.com/css?family=Signika);
 @import url(https://fonts.googleapis.com/css?family=Cabin);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu);
 
 /*VARIABLES*/
-$font-stack: Cabin, 'Open sans', sans-serif;
-$cardfont:  'Open sans', Helvetica,  sans-serif;
+$heading-font: Signika, Helvetica,  sans-serif;
+$card-font: Ubuntu, Helvetica, sans-serif;
+$font-stack: Cabin, Helvetica, sans-serif;
 $primary-color: #777;
 $light-color: #CEDADA;
 $light-color-2: #FFF;
@@ -74,7 +77,7 @@ body, html {
 
         .biz-card {
             background-color: white;
-            font-family: $cardfont;
+            font-family: $card-font;
             text-transform: lowercase;
             font-size: calc(12px + (20 - 12) * ((70vw) / (1600 - 300)));
 
@@ -194,7 +197,7 @@ body, html {
     position: fixed;
     width: 100vw;
     top: 0;
-    background-color: rgba(white, 0.9);
+    background-color: rgba($primary-color, 0.9);
     border: none;
     border-radius: 0;
     letter-spacing: 2px;
@@ -240,6 +243,7 @@ body, html {
 }
 
 .section-heading {
+    font-family: $heading-font;
     color: $accent-color;
     font-size: 2rem;
     text-transform: uppercase;
@@ -365,7 +369,7 @@ section {
     width: 100vw;
     height: 100vh;
     background-color: RGBA(0,0,0,0.9);
-    overflow: auto;
+    overflow-y: auto;
 
     .close {
         color: $light-color;
