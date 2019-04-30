@@ -1,38 +1,28 @@
+// Calc viewport height
 function vh(v) {
-  var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+  const h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
   return (v * h) / 100;
 }
 
+// Scroll reveal child elements
+function revealChildren(elements) {
+    ScrollReveal().reveal(...elements, {
+        origin: 'left',
+        viewFactor: 1,
+    }, 500);        
+}
+
 $(document).ready(function() {
+    window.sr = ScrollReveal({
+        duration: 500,
+        delay: 200,
+        easing: 'ease-out',        
+    })
 
     // Add scrollspy to <body>
     const navOffset = $('.navbar').height();
     $('#navbar').attr('data-offset-top', vh(100) - navOffset)
-    $('body').scrollspy({target: ".navbar", offset: navOffset});   
-    
-    // Smooth scroll to anchors
-    $('a[href*="#"]')
-        .not('[href="#"]')
-        .not('[href="#0"]')
-        .click(function(event) {
-            if (
-                location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
-                && 
-                location.hostname == this.hostname
-            ) {
-                const hash = this.hash;
-                let target = $(hash);
-                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                if (target.length) {
-                    event.preventDefault();
-                    $('html, body').stop().animate({
-                        scrollTop: target.offset().top - navOffset + 1
-                    }, 300, function () {
-                        window.location.hash = hash;
-                    });
-                }
-            }
-        });
+    $('body').scrollspy({target: ".navbar", offset: navOffset});
     
     // Closes responsive menu when a scroll trigger link is clicked
     $('#navigation').click(function() {
@@ -59,4 +49,22 @@ $(document).ready(function() {
             $lightbox.fadeOut('fast');
         });
     });
+
+    // Scroll reveal animations
+    sr.reveal('section')
+    sr.reveal('.projects > .portfolio-item', {
+        origin: 'left',
+        distance: '2rem',
+        interval: 200,
+        duration: 600,
+        easing: "ease-in-out",
+    })    
+    sr.reveal('.skills > .skill', {
+        origin: 'right',
+        distance: '2rem',
+        interval: 200,
+        duration: 600,
+        easing: "ease-in-out",        
+        afterReveal: () => revealChildren($('.skill'))
+    })
 });

@@ -265,7 +265,9 @@ section {
 }
 
 /*HOME*/
-#home {   
+#home {
+    // background: radial-gradient(circle, rgba($dark-color-2, 1) -20%, rgba($dark-color-2, 1) 120%);    
+
     #about-me {
         display: flex;
         align-items: center;
@@ -446,8 +448,8 @@ section {
         }
 
         .skill {
-            margin: 1rem;
-            min-width: 180px;
+            margin: 0.5rem;
+            min-width: 185px;
             box-shadow: 0 1rem 2rem rgba(black, .10), 0 1rem 2rem rgba(black, .1);            
         }
 
@@ -463,10 +465,10 @@ section {
     .contacts {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        width: 100%;
+        width: 90%;
         max-width: 30rem;
         grid-gap: 1rem;
-        font-size: 2rem;
+        font-size: 1.5rem;
         text-align: center;
         padding-top: 2rem;
     }
