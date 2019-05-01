@@ -193,8 +193,11 @@ body, html {
 
 
 /*NAV*/
+.nav-wrapper {
+    min-height: 50px;
+}
+
 .navbar {
-    width: 100vw;
     background-color: rgba(white, 0.9);
     border: none;
     border-radius: 0;
