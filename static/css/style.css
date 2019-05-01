@@ -123,7 +123,7 @@ body, html {
 }
 .outer-arrow-btn .arrow-btn i {
   font-size: 5rem;
-  color: #FFA630;
+  color: #6B0504;
 }
 .outer-arrow-btn .arrow-btn:hover,
 .outer-arrow-btn .arrow-btn:focus {
@@ -131,14 +131,12 @@ body, html {
 }
 .outer-arrow-btn .arrow-btn:hover i,
 .outer-arrow-btn .arrow-btn:focus i {
-  color: #DB6200;
+  color: #A3320B;
 }
 
 /*NAV*/
 .navbar {
-  position: fixed;
   width: 100vw;
-  top: 0;
   background-color: rgba(255, 255, 255, 0.9);
   border: none;
   border-radius: 0;
@@ -148,13 +146,13 @@ body, html {
   /*Override navbar defaults*/
 }
 .navbar .navbar-brand {
-  color: #FFA630;
+  color: #6B0504;
 }
 .navbar .navbar-nav .nav-item.active {
-  color: #DB6200 !important;
+  color: #A3320B !important;
 }
 .navbar .navbar-nav.open a:hover, .navbar .navbar-nav.open a:focus {
-  color: #DB6200;
+  color: #A3320B;
   background-color: RGBA(255, 255, 255, 0);
 }
 .navbar .navbar-nav .navbar-toggler .navbar-toggler-icon {
@@ -173,7 +171,7 @@ body, html {
 
 .section-heading {
   font-family: Signika, Helvetica, sans-serif;
-  color: #DB6200;
+  color: #DB702E;
   font-size: 2rem;
   text-transform: uppercase;
   font-weight: bold;
@@ -181,11 +179,11 @@ body, html {
 }
 
 .section-subheading {
-  color: #FFA630;
+  color: #DB702E;
 }
 
 .subsection-heading {
-  color: #DB6200;
+  color: #DB702E;
   font-weight: bold;
 }
 
@@ -247,7 +245,7 @@ section * {
   width: 100%;
   height: 100%;
   opacity: 0;
-  background: #0F0F0F;
+  background: #3A4147;
   -webkit-transition: all ease 0.5s;
   -moz-transition: all ease 0.5s;
   transition: all ease 0.5s;
@@ -257,10 +255,10 @@ section * {
   padding: 2rem;
   top: 50%;
   transform: translate(0, -50%);
-  color: #CEDADA;
+  color: #FFF;
 }
 #portfolio .portfolio-item .portfolio-container .portfolio-hover .portfolio-hover-content .portfolio-title {
-  color: #FFA630;
+  color: #DB702E;
   font-size: 2rem;
 }
 #portfolio .portfolio-item .portfolio-container .portfolio-hover .portfolio-hover-content .portfolio-description {
@@ -286,7 +284,7 @@ section * {
   overflow-y: auto;
 }
 #lightbox .close {
-  color: #CEDADA;
+  color: #6B0504;
   position: absolute;
   top: 0;
   right: 1rem;
@@ -295,7 +293,7 @@ section * {
 }
 #lightbox .close:hover,
 #lightbox .close:focus {
-  color: #FFA630;
+  color: #A3320B;
   text-decoration: none;
   cursor: pointer;
 }
@@ -315,20 +313,20 @@ section * {
 #lightbox .modal-content .caption-container {
   margin: auto;
   width: 95%;
-  padding: 2rem;
+  padding: 7.5%;
 }
 #lightbox .modal-content .caption-container .portfolio-title {
-  color: #DB6200;
-  font-size: 2rem;
+  color: #DB702E;
+  font-size: 1.5rem;
 }
 #lightbox .modal-content .caption-container .portfolio-description {
-  color: #0F0F0F;
-  font-size: 1.5rem;
+  color: #6B0504;
+  font-size: 1.25rem;
 }
 
 /*EXPERIENCE*/
 #resume {
-  background: radial-gradient(circle, rgba(119, 119, 119, 0.5) -20%, rgba(15, 15, 15, 0.5) 120%);
+  background: radial-gradient(circle, rgba(119, 119, 119, 0.5) -20%, rgba(58, 65, 71, 0.5) 120%);
   color: #FFF;
 }
 #resume .skills {
@@ -341,7 +339,7 @@ section * {
 }
 #resume .skills .skill .card-header,
 #resume .skills .skill * .card-header {
-  color: #FFA630;
+  color: #6B0504;
 }
 #resume .skills .skill .card-header .frontend-icon,
 #resume .skills .skill * .card-header .frontend-icon {
@@ -351,11 +349,11 @@ section * {
 #resume .skills .skill .card-header i,
 #resume .skills .skill * .card-header .frontend-icon,
 #resume .skills .skill * .card-header i {
-  color: #DB6200;
+  color: #A3320B;
 }
 #resume .skills .skill .subsection-heading,
 #resume .skills .skill * .subsection-heading {
-  color: #DB6200;
+  color: #A3320B;
   padding-right: 0.5rem;
 }
 #resume .skills .skill {
@@ -382,7 +380,7 @@ section * {
   color: grey;
 }
 #contact i:hover {
-  color: #FFA630;
+  color: #6B0504;
 }
 
 /*FOOTER*/

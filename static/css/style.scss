@@ -8,12 +8,12 @@ $heading-font: Signika, Helvetica,  sans-serif;
 $card-font: Ubuntu, Helvetica, sans-serif;
 $font-stack: Cabin, Helvetica, sans-serif;
 $primary-color: #777;
-$light-color: #CEDADA;
+$light-color: #DB702E;
 $light-color-2: #FFF;
-$dark-color: #0F0F0F;
-$dark-color-2: #466B60;
-$accent-color: #DB6200;
-$accent-color-2: #FFA630;
+$dark-color: #3A4147;
+$dark-color-2: #241023;
+$accent-color: #A3320B;
+$accent-color-2: #6B0504;
 
 body, html {
     font-family: $font-stack;
@@ -194,9 +194,7 @@ body, html {
 
 /*NAV*/
 .navbar {
-    position: fixed;
     width: 100vw;
-    top: 0;
     background-color: rgba(white, 0.9);
     border: none;
     border-radius: 0;
@@ -244,7 +242,7 @@ body, html {
 
 .section-heading {
     font-family: $heading-font;
-    color: $accent-color;
+    color: $light-color;
     font-size: 2rem;
     text-transform: uppercase;
     font-weight: bold;
@@ -252,11 +250,11 @@ body, html {
 }
 
 .section-subheading {
-    color: $accent-color-2;
+    color: $light-color;
 }
 
 .subsection-heading {
-    color: $accent-color;
+    color: $light-color;
     font-weight: bold;
 }
 
@@ -335,10 +333,10 @@ section {
                     padding: 2rem;
                     top: 50%;
                     transform: translate(0, -50%);
-                    color: $light-color;
+                    color: $light-color-2;
                     
                     .portfolio-title {
-                        color: $accent-color-2;
+                        color: $light-color;
                         font-size: 2rem;
                     }
                     
@@ -372,7 +370,7 @@ section {
     overflow-y: auto;
 
     .close {
-        color: $light-color;
+        color: $accent-color-2;
         position: absolute;
         top: 0;
         right: 1rem;
@@ -382,7 +380,7 @@ section {
     
     .close:hover,
     .close:focus {
-        color: $accent-color-2;
+        color: $accent-color;
         text-decoration: none;
         cursor: pointer;
     }    
@@ -404,16 +402,16 @@ section {
         .caption-container {
             margin: auto;
             width: 95%;
-            padding: 2rem;
+            padding: 7.5%;
             
             .portfolio-title {
-                color: $accent-color;
-                font-size: 2rem;
+                color: $light-color;
+                font-size: 1.5rem;
             }
             
             .portfolio-description {
-                color: $dark-color;
-                font-size: 1.5rem;
+                color: $accent-color-2;
+                font-size: 1.25rem;
             }
         }
     }

@@ -28,6 +28,17 @@ $(document).ready(function() {
     $('#navigation').click(function() {
         $('.navbar-collapse').collapse('hide');
     }); 
+
+    // Affix navbar after hero
+    $(window).on('scroll', function(event) {
+        const scrollValue = $(window).scrollTop();
+        const heroHeight = $('.hero').height();
+        if (scrollValue >= heroHeight) {
+             $('.navbar').addClass('fixed-top');
+        } else {
+             $('.navbar').removeClass('fixed-top');
+        }
+    });
     
     // Lightbox for portfolio items
     $(document).on('click', '.portfolio-container', function(event) {
