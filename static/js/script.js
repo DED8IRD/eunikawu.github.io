@@ -65,14 +65,14 @@ $(document).ready(function() {
     sr.reveal('section')
     sr.reveal('.projects > .portfolio-item', {
         origin: 'left',
-        distance: '1.5rem',
+        distance: '10%',
         interval: 200,
         duration: 600,
         easing: "ease-in-out",
     })    
     sr.reveal('.skills > .skill', {
         origin: 'right',
-        distance: '10rem',
+        distance: '10%',
         interval: 300,
         duration: 700,
         easing: "ease-in-out",        

@@ -15,8 +15,61 @@ $dark-color-2: #241023;
 $accent-color: #A3320B;
 $accent-color-2: #6B0504;
 
+/* Fluid typography */
+@function strip-unit($value) {
+    @return $value / ($value * 0 + 1);
+}
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+    $u1: unit($min-vw);
+    $u2: unit($max-vw);
+    $u3: unit($min-font-size);
+    $u4: unit($max-font-size);
+
+    @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+        & {
+            font-size: $min-font-size;
+            @media screen and (min-width: $min-vw) {
+                font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+            }
+            @media screen and (min-width: $max-vw) {
+                font-size: $max-font-size;
+            }
+        }
+    }      
+}
+
+
+$min_width: 320px;
+$max_width: 2400px;
+$min_font: 14px;
+$max_font: 24px;
+
+$mod_1: 1.2; // mobile
+$mod_2: 1.5; // desktop
+
+h1 {  
+    font-size: $mod_1*$mod_1*$mod_1*$mod_1 *1rem; 
+    @include fluid-type($min_width, $max_width, $mod_1*$mod_1*$mod_1 *$min_font, $mod_2*$mod_2*$mod_2 *$min_font);
+}
+h2 {  
+    font-size: $mod_1*$mod_1*$mod_1 *1rem; 
+    @include fluid-type($min_width, $max_width, $mod_1*$mod_1*$mod_1 *$min_font, $mod_2*$mod_2*$mod_2 *$min_font);
+}
+h3 { 
+    font-size: $mod_1*$mod_1 *1rem;
+    @include fluid-type($min_width, $max_width, $mod_1*$mod_1 *$min_font, $mod_2*$mod_2 *$min_font);
+}
+
+p {
+    font-size: $mod_1 *1rem;
+    @include fluid-type($min_width, $max_width, $mod_1 *$min_font, $mod_2 *$min_font);    
+}
+
 body, html {
     font-family: $font-stack;
+    @include fluid-type($min_width, $max_width, $min_font, $max_font);
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
     height: 100%;
     width: 100%;
     scroll-behavior: smooth;    
@@ -79,8 +132,6 @@ body, html {
             background-color: white;
             font-family: $card-font;
             text-transform: lowercase;
-            font-size: calc(12px + (20 - 12) * ((70vw) / (1600 - 300)));
-
             box-shadow: 1rem 1rem 1rem rgba(black, .2);
 
             transform: rotateX(60deg) rotateY(1deg) rotateZ(45deg);
@@ -114,7 +165,6 @@ body, html {
                 .name-card {
                     grid-area: name;
                     font-weight: bold;
-                    font-size: calc(18px + (30 - 18) * ((70vw) / (1600 - 300)));
                 }
 
                 .company {
@@ -172,13 +222,12 @@ body, html {
 }    
 
 .outer-arrow-btn {
+    padding: 5em;
     .arrow-btn {
-        padding: 5rem;
         display: block;
         z-index: 100;
         i {
-            font-size: 5rem;
-            color: $accent-color-2;
+            color: $accent-color;
         }
     }
 
@@ -186,9 +235,17 @@ body, html {
     .arrow-btn:focus {
         box-shadow: none;        
         i {
-            color: $accent-color;
+            color: $light-color;
         }
     }
+
+}
+
+#arrow-top {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    padding: 0;
 }
 
 
@@ -246,7 +303,6 @@ body, html {
 .section-heading {
     font-family: $heading-font;
     color: $light-color;
-    font-size: 2rem;
     text-transform: uppercase;
     font-weight: bold;
     padding-bottom: 2rem;
@@ -271,8 +327,7 @@ section {
 
 /*HOME*/
 #home {
-    // background: radial-gradient(circle, rgba($dark-color-2, 1) -20%, rgba($dark-color-2, 1) 120%);    
-
+    // background: radial-gradient(circle, rgba($dark-color-2, 1) -20%, rgba($dark-color-2, 1) 120%);        
     #about-me {
         display: flex;
         align-items: center;
@@ -340,11 +395,9 @@ section {
                     
                     .portfolio-title {
                         color: $light-color;
-                        font-size: 2rem;
                     }
                     
                     .portfolio-description {
-                        font-size: 1.2rem;
                     }
 
                     .portfolio-modal-description {
@@ -378,7 +431,6 @@ section {
         top: 0;
         right: 1rem;
         text-align: center;
-        font-size: 3rem;
     }
     
     .close:hover,
@@ -409,12 +461,10 @@ section {
             
             .portfolio-title {
                 color: $light-color;
-                font-size: 1.5rem;
             }
             
             .portfolio-description {
                 color: $accent-color-2;
-                font-size: 1.25rem;
             }
         }
     }
@@ -476,15 +526,16 @@ section {
         font-size: 1.5rem;
         text-align: center;
         padding-top: 2rem;
+    
+        i {
+            color: grey;
+        }
+        
+        i:hover {
+            color: $accent-color-2;
+        }
     }
     
-    i {
-        color: grey;
-    }
-    
-    i:hover {
-        color: $accent-color-2;
-    }
     
 }
 
