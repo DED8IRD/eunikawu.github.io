@@ -222,7 +222,6 @@ body, html {
 }    
 
 .outer-arrow-btn {
-    padding: 5em;
     .arrow-btn {
         display: block;
         z-index: 100;
@@ -512,6 +511,10 @@ section {
             padding-left: .75rem;
         }
     }
+
+    .dl-resume-btn {
+        // margin-left: auto;
+    }
 }
 
 /*CONTACT*/
@@ -525,7 +528,7 @@ section {
         grid-gap: 1rem;
         font-size: 1.5rem;
         text-align: center;
-        padding-top: 2rem;
+        padding-bottom: 2rem;
     
         i {
             color: grey;

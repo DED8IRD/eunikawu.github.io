@@ -197,9 +197,6 @@ body, html {
   top: 0;
 }
 
-.outer-arrow-btn {
-  padding: 5em;
-}
 .outer-arrow-btn .arrow-btn {
   display: block;
   z-index: 100;
@@ -448,7 +445,6 @@ section * {
 #resume .skills .skill-title {
   padding-left: 0.75rem;
 }
-
 /*CONTACT*/
 #contact .contacts {
   display: grid;
@@ -458,7 +454,7 @@ section * {
   grid-gap: 1rem;
   font-size: 1.5rem;
   text-align: center;
-  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 #contact .contacts i {
   color: grey;
