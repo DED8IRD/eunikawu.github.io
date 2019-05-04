@@ -146,7 +146,8 @@ body, html {
   transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(1rem) translateY(1rem) scale(1.2);
 }
 .hero .card-container .biz-card:focus {
-  transform: rotateX(-180deg) rotateY(0deg) rotateZ(0deg) translateZ(1rem) translateY(-1rem) scale(1.2);
+  transform-origin: 50% 100%;
+  transform: rotateX(-180deg) rotateY(0deg) rotateZ(0deg) translateZ(1rem) translateY(100%) scale(1.2);
 }
 .hero .card-container .biz-card:hover, .hero .card-container .biz-card:focus {
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
