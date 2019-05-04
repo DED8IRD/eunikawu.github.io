@@ -95,6 +95,7 @@ body, html {
 
 /*HERO*/
 .hero {
+  position: sticky;
   display: flex;
   background: radial-gradient(circle farthest-side, #f4f4f4, #efeee8);
   width: 100vw;
@@ -215,7 +216,7 @@ body, html {
 }
 
 #arrow-top {
-  position: fixed;
+  position: absolute;
   bottom: 1rem;
   right: 1rem;
   padding: 0;
@@ -264,7 +265,7 @@ body, html {
   color: #DB702E;
   text-transform: uppercase;
   font-weight: bold;
-  padding-bottom: 2rem;
+  padding-bottom: 1.5rem;
 }
 
 .section-subheading {
@@ -446,6 +447,10 @@ section * {
 #resume .skills .skill-title {
   padding-left: 0.75rem;
 }
+#resume .dl-resume-btn {
+  margin-bottom: 1rem;
+}
+
 /*CONTACT*/
 #contact .contacts {
   display: grid;
