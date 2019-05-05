@@ -74,6 +74,7 @@ p {
 
 body, html {
   font-family: Cabin, Helvetica, sans-serif;
+  color: #FFF;
   padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
   height: 100%;
   width: 100%;
@@ -84,20 +85,24 @@ body, html {
 }
 @media screen and (min-width: 320px) {
   body, html {
-    font-size: calc(14px + 10 * ((100vw - 320px) / 2080));
+    font-size: calc(14px + 12 * ((100vw - 320px) / 2080));
   }
 }
 @media screen and (min-width: 2400px) {
   body, html {
-    font-size: 24px;
+    font-size: 26px;
   }
+}
+
+a {
+  color: #2F8DA3;
 }
 
 /*HERO*/
 .hero {
   position: sticky;
   display: flex;
-  background: radial-gradient(circle farthest-side, #f4f4f4, #efeee8);
+  background: linear-gradient(rgba(219, 112, 46, 0.2), rgba(107, 5, 4, 0.2)), url(../images/hero-bkgd.jpg) no-repeat center center/cover;
   width: 100vw;
   height: 100vh;
   max-width: 100%;
@@ -122,52 +127,41 @@ body, html {
   transition: all 0.7s ease;
   will-change: transform;
 }
-.hero .biz-card-under {
-  box-shadow: 1rem 2rem 3rem rgba(0, 0, 0, 0.4);
-}
-.hero .biz-card-under.one {
-  transform: rotateX(60deg) rotateY(1deg) rotateZ(45deg) translateZ(-1rem);
-}
-.hero .biz-card-under.two {
-  transform: rotateX(60deg) rotateY(1deg) rotateZ(45deg) translateZ(-2rem);
-}
 .hero .card-container {
   position: relative;
 }
+.hero .card-container .biz-card-under {
+  box-shadow: 1rem 2rem 3rem rgba(0, 0, 0, 0.4);
+}
+.hero .card-container .biz-card-under.one {
+  transform: rotateX(60deg) rotateY(1deg) rotateZ(45deg) translateZ(-2rem);
+}
+.hero .card-container .biz-card-under.two {
+  transform: rotateX(60deg) rotateY(1deg) rotateZ(45deg) translateZ(-1rem);
+}
+.hero .card-container .biz-card-under,
 .hero .card-container .biz-card {
-  background-color: white;
+  background-color: #241023;
   font-family: Ubuntu, Helvetica, sans-serif;
+  color: #FFF;
   text-transform: lowercase;
-  box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.2);
-  transform: rotateX(60deg) rotateY(1deg) rotateZ(45deg);
-  transform-style: preserve-3d;
-  perspective: 150rem;
 }
-.hero .card-container .biz-card:hover {
-  transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(1rem) translateY(1rem) scale(1.2);
-}
-.hero .card-container .biz-card:focus {
-  transform-origin: 50% 100%;
-  transform: rotateX(-180deg) rotateY(0deg) rotateZ(0deg) translateZ(1rem) translateY(100%) scale(1.2);
-}
-.hero .card-container .biz-card:hover, .hero .card-container .biz-card:focus {
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
-}
-.hero .card-container .biz-card:hover ~ .overlay, .hero .card-container .biz-card:focus ~ .overlay {
-  opacity: 0.8;
-}
-.hero .card-container .biz-card-front {
+.hero .card-container .biz-card-front,
+.hero .card-container .biz-card-under {
   transform: rotateX(0deg);
   grid-template-areas: "top-left    . . . . .     top-right" ".         . . name . .            ." ".       . . company . .           ." ".         . . job . .             ." "bottom-left . . . . . bottom-right";
 }
-.hero .card-container .biz-card-front .name-card {
+.hero .card-container .biz-card-front .name-card,
+.hero .card-container .biz-card-under .name-card {
   grid-area: name;
   font-weight: bold;
 }
-.hero .card-container .biz-card-front .company {
+.hero .card-container .biz-card-front .company,
+.hero .card-container .biz-card-under .company {
   grid-area: company;
 }
-.hero .card-container .biz-card-front .job-title {
+.hero .card-container .biz-card-front .job-title,
+.hero .card-container .biz-card-under .job-title {
   grid-area: job;
 }
 .hero .card-container .biz-card-back {
@@ -181,6 +175,30 @@ body, html {
   grid-area: social;
   display: grid;
   grid-template-columns: repeat(3, auto);
+}
+.hero .card-container .biz-card {
+  box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.2);
+  transform: rotateX(60deg) rotateZ(45deg);
+  transform-style: preserve-3d;
+  perspective: 150rem;
+}
+.hero .card-container .biz-card .click-me {
+  position: absolute;
+  top: -20%;
+  transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) !important;
+}
+.hero .card-container .biz-card:hover {
+  transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(1rem) translateY(1rem) scale(1.2);
+}
+.hero .card-container .biz-card:focus {
+  transform-origin: 50% 100%;
+  transform: rotateX(-180deg) rotateY(0deg) rotateZ(0deg) translateZ(1rem) translateY(100%) scale(1.2);
+}
+.hero .card-container .biz-card:hover, .hero .card-container .biz-card:focus {
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+}
+.hero .card-container .biz-card:hover ~ .overlay, .hero .card-container .biz-card:focus ~ .overlay {
+  opacity: 0.8;
 }
 .hero .card-container .biz-card-front, .hero .card-container .biz-card-back {
   padding: 1.5rem 1rem 1rem 1rem;
@@ -204,7 +222,7 @@ body, html {
   z-index: 100;
 }
 .outer-arrow-btn .arrow-btn i {
-  color: #A3320B;
+  color: #2F8DA3;
 }
 .outer-arrow-btn .arrow-btn:hover,
 .outer-arrow-btn .arrow-btn:focus {
@@ -224,11 +242,12 @@ body, html {
 
 /*NAV*/
 .nav-wrapper {
+  background-color: black;
   min-height: 50px;
 }
 
 .navbar {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(36, 16, 35, 0.9);
   border: none;
   border-radius: 0;
   letter-spacing: 2px;
@@ -237,20 +256,23 @@ body, html {
   /*Override navbar defaults*/
 }
 .navbar .navbar-brand {
-  color: #6B0504;
+  color: #2F8DA3;
+}
+.navbar .navbar-brand .cmd-icon {
+  color: #777;
 }
 .navbar .navbar-nav .nav-item.active {
-  color: #A3320B !important;
+  color: #2F8DA3 !important;
 }
 .navbar .navbar-nav.open a:hover, .navbar .navbar-nav.open a:focus {
-  color: #A3320B;
-  background-color: RGBA(255, 255, 255, 0);
+  background: rgba(255, 255, 255, 0.05);
+  color: #2F8DA3;
 }
 .navbar .navbar-nav .navbar-toggler .navbar-toggler-icon {
   color: #777;
 }
 .navbar .navbar-nav .navbar-toggler:focus {
-  background: RGBA(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 10px;
 }
 
@@ -280,12 +302,16 @@ body, html {
 section {
   margin: auto;
   padding: 7.5% 10%;
+  border: none;
 }
 section * {
   margin: auto;
 }
 
 /*HOME*/
+#home {
+  background: radial-gradient(circle, #3A4147 -20%, #241023 120%);
+}
 #home #about-me {
   display: flex;
   align-items: center;
@@ -312,6 +338,7 @@ section * {
   display: flex;
   justify-content: center;
   align-items: center;
+  background: linear-gradient(rgba(36, 16, 35, 0.5), rgba(36, 16, 35, 0.7)), url(../images/egg-texture.jpg) center center/cover;
 }
 #portfolio .portfolio-item {
   padding: 1rem;
@@ -335,17 +362,16 @@ section * {
   width: 100%;
   height: 100%;
   opacity: 0;
-  background: #3A4147;
+  background: #241023;
   -webkit-transition: all ease 0.5s;
   -moz-transition: all ease 0.5s;
   transition: all ease 0.5s;
 }
 #portfolio .portfolio-item .portfolio-container .portfolio-hover .portfolio-hover-content {
   position: absolute;
-  padding: 2rem;
+  padding: 10%;
   top: 50%;
   transform: translate(0, -50%);
-  color: #FFF;
 }
 #portfolio .portfolio-item .portfolio-container .portfolio-hover .portfolio-hover-content .portfolio-title {
   color: #DB702E;
@@ -366,11 +392,12 @@ section * {
   top: 0;
   width: 100vw;
   height: 100vh;
-  background-color: RGBA(0, 0, 0, 0.9);
+  background-color: rgba(36, 16, 35, 0.75);
   overflow-y: auto;
+  color: #241023;
 }
 #lightbox .close {
-  color: #6B0504;
+  color: #2F8DA3;
   position: absolute;
   top: 0;
   right: 1rem;
@@ -378,13 +405,12 @@ section * {
 }
 #lightbox .close:hover,
 #lightbox .close:focus {
-  color: #A3320B;
+  color: #2F8DA3;
   text-decoration: none;
   cursor: pointer;
 }
 #lightbox .modal-content {
   position: relative;
-  background-color: #FFF;
   margin: auto;
   padding: 0;
   width: 680px;
@@ -409,8 +435,7 @@ section * {
 
 /*EXPERIENCE*/
 #resume {
-  background: radial-gradient(circle, rgba(119, 119, 119, 0.5) -20%, rgba(58, 65, 71, 0.5) 120%);
-  color: #FFF;
+  background: radial-gradient(circle, rgba(58, 65, 71, 0.75) -20%, rgba(36, 16, 35, 0.75) 120%);
 }
 #resume .skills {
   padding-bottom: 2rem;
@@ -432,11 +457,11 @@ section * {
 #resume .skills .skill .card-header i,
 #resume .skills .skill * .card-header .frontend-icon,
 #resume .skills .skill * .card-header i {
-  color: #A3320B;
+  color: #DB702E;
 }
 #resume .skills .skill .subsection-heading,
 #resume .skills .skill * .subsection-heading {
-  color: #A3320B;
+  color: #6B0504;
   padding-right: 0.5rem;
 }
 #resume .skills .skill {
@@ -452,6 +477,9 @@ section * {
 }
 
 /*CONTACT*/
+#contact {
+  background: radial-gradient(circle, #3A4147 -20%, #241023 120%);
+}
 #contact .contacts {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -460,13 +488,13 @@ section * {
   grid-gap: 1rem;
   font-size: 1.5rem;
   text-align: center;
-  padding-bottom: 2rem;
+  padding: 2rem;
 }
 #contact .contacts i {
   color: grey;
 }
 #contact .contacts i:hover {
-  color: #6B0504;
+  color: #2F8DA3;
 }
 
 /*FOOTER*/

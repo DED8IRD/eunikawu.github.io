@@ -12,7 +12,7 @@ $light-color: #DB702E;
 $light-color-2: #FFF;
 $dark-color: #3A4147;
 $dark-color-2: #241023;
-$accent-color: #A3320B;
+$accent-color: #2F8DA3;
 $accent-color-2: #6B0504;
 
 /* Fluid typography */
@@ -43,7 +43,7 @@ $accent-color-2: #6B0504;
 $min_width: 320px;
 $max_width: 2400px;
 $min_font: 14px;
-$max_font: 24px;
+$max_font: 26px;
 
 $mod_1: 1.2; // mobile
 $mod_2: 1.5; // desktop
@@ -68,6 +68,7 @@ p {
 
 body, html {
     font-family: $font-stack;
+    color: $light-color-2;
     @include fluid-type($min_width, $max_width, $min_font, $max_font);
     padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
     height: 100%;
@@ -75,11 +76,23 @@ body, html {
     scroll-behavior: smooth;    
 }
 
+a {
+    color: $accent-color;
+    // text-decoration: underline;
+}
+
 /*HERO*/
 .hero {
     position: sticky;
     display: flex;
-    background: radial-gradient(circle farthest-side, #f4f4f4, #efeee8);
+    // linear gradient over background image to give illusion of perspective
+    background: 
+        linear-gradient(
+            rgba($light-color, 0.2),
+            rgba($accent-color-2, 0.2),            
+        ),
+        url(../images/hero-bkgd.jpg) no-repeat center center/cover;
+
     width: 100vw;
     height: 100vh;
     max-width: 100%;
@@ -114,30 +127,85 @@ body, html {
         transition: all 0.7s ease;
         will-change: transform;
     }   
-
-    .biz-card-under {
-        box-shadow: 1rem 2rem 3rem rgba(black, .4);
-
-        &.one {
-            transform: rotateX(60deg) rotateY(1deg) rotateZ(45deg) translateZ(-1rem);
-        }
-        &.two {
-            transform: rotateX(60deg) rotateY(1deg) rotateZ(45deg) translateZ(-2rem);
-        }
-    }         
         
     .card-container {
         position: relative;  
 
-        .biz-card {
-            background-color: white;
-            font-family: $card-font;
-            text-transform: lowercase;
-            box-shadow: 1rem 1rem 1rem rgba(black, .2);
+        .biz-card-under {
+            box-shadow: 1rem 2rem 3rem rgba(black, .4);
 
-            transform: rotateX(60deg) rotateY(1deg) rotateZ(45deg);
+            &.one {
+                transform: rotateX(60deg) rotateY(1deg) rotateZ(45deg) translateZ(-2rem);
+            }
+            &.two {
+                transform: rotateX(60deg) rotateY(1deg) rotateZ(45deg) translateZ(-1rem);
+            }
+        }         
+
+        .biz-card-under,
+        .biz-card {
+            background-color: $dark-color-2;
+            font-family: $card-font;
+            color: $light-color-2;
+            text-transform: lowercase;
+        }
+
+
+        .biz-card-front,
+        .biz-card-under {
+            transform: rotateX(0deg);
+
+            grid-template-areas: 
+                "top-left    . . . . .     top-right"
+                ".         . . name . .            ."
+                ".       . . company . .           ."
+                ".         . . job . .             ."
+                "bottom-left . . . . . bottom-right";
+    
+            .name-card {
+                grid-area: name;
+                font-weight: bold;
+            }
+
+            .company {
+                grid-area: company;
+            }   
+
+            .job-title {
+                grid-area: job;
+            }                    
+        }
+        .biz-card-back {
+            transform: rotateX(180deg);
+            grid-template-areas: 
+                "top-left    . . . . .     top-right"
+                ".          . . name . .           ."
+                ".           . . . . .             ."
+                ".         . . social . .          ."
+                "bottom-left . . . . . bottom-right";
+
+            .name-card {
+                grid-area: name;
+            }
+
+            .social {
+                grid-area: social;
+                display: grid;
+                grid-template-columns: repeat(3, auto);
+            }
+        }        
+
+        .biz-card {
+            box-shadow: 1rem 1rem 1rem rgba(black, .2);
+            transform: rotateX(60deg) rotateZ(45deg);
             transform-style: preserve-3d;
             perspective: 150rem;
+
+            .click-me {
+                position: absolute;
+                top: -20%;
+                transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) !important;
+            }
 
             &:hover { 
                 transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(1rem) translateY(1rem) scale(1.2);
@@ -155,47 +223,6 @@ body, html {
                 }
             }
 
-            &-front {
-                transform: rotateX(0deg);
-                grid-template-areas: 
-                    "top-left    . . . . .     top-right"
-                    ".         . . name . .            ."
-                    ".       . . company . .           ."
-                    ".         . . job . .             ."
-                    "bottom-left . . . . . bottom-right";
-        
-                .name-card {
-                    grid-area: name;
-                    font-weight: bold;
-                }
-
-                .company {
-                    grid-area: company;
-                }   
-
-                .job-title {
-                    grid-area: job;
-                }                    
-            }
-            &-back {
-                transform: rotateX(180deg);
-                grid-template-areas: 
-                    "top-left    . . . . .     top-right"
-                    ".          . . name . .           ."
-                    ".           . . . . .             ."
-                    ".         . . social . .          ."
-                    "bottom-left . . . . . bottom-right";
-
-                .name-card {
-                    grid-area: name;
-                }
-
-                .social {
-                    grid-area: social;
-                    display: grid;
-                    grid-template-columns: repeat(3, auto);
-                }
-            }
             &-front,
             &-back {
                 padding: 1.5rem 1rem 1rem 1rem;
@@ -219,7 +246,6 @@ body, html {
                 top: 0;
             }
         }
-
     }
 }    
 
@@ -252,11 +278,12 @@ body, html {
 
 /*NAV*/
 .nav-wrapper {
+    background-color: black;
     min-height: 50px;
 }
 
 .navbar {
-    background-color: rgba(white, 0.9);
+    background-color: rgba($dark-color-2, 0.9);
     border: none;
     border-radius: 0;
     letter-spacing: 2px;
@@ -265,7 +292,11 @@ body, html {
 
     /*Override navbar defaults*/
     .navbar-brand {
-        color: $accent-color-2;
+        color: $accent-color;
+
+        .cmd-icon {
+            color: $primary-color;
+        }
     }
 
     .navbar-nav {
@@ -278,8 +309,8 @@ body, html {
         &.open a {
             &:hover,
             &:focus {
+                background: rgba(white, 0.05);
                 color: $accent-color;
-                background-color: RGBA(255,255,255,0);
             }
         }        
 
@@ -288,7 +319,7 @@ body, html {
                 color: $primary-color;
             }
             &:focus {
-                background: RGBA(0,0,0,0.05);
+                background: rgba(white, 0.05);
                 border-radius: 10px;
             }
         }
@@ -324,11 +355,13 @@ section {
     * {
         margin: auto;
     }
+    border: none;
 }
 
 /*HOME*/
 #home {
-    // background: radial-gradient(circle, rgba($dark-color-2, 1) -20%, rgba($dark-color-2, 1) 120%);        
+    background: radial-gradient(circle, $dark-color -20%, $dark-color-2 120%);    
+
     #about-me {
         display: flex;
         align-items: center;
@@ -358,6 +391,12 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;  
+    background:
+        linear-gradient(
+            rgba($dark-color-2, 0.5),            
+            rgba($dark-color-2, 0.7),
+        ),    
+        url(../images/egg-texture.jpg) center center/cover;
 
     .portfolio-item {
         padding: 1rem;
@@ -382,17 +421,16 @@ section {
                 width: 100%;
                 height: 100%;
                 opacity: 0;
-                background: $dark-color;
+                background: $dark-color-2;
                 -webkit-transition: all ease .5s;
                 -moz-transition: all ease .5s;
                 transition: all ease .5s;  
                 
                 .portfolio-hover-content {
                     position: absolute;
-                    padding: 2rem;
+                    padding: 10%;
                     top: 50%;
                     transform: translate(0, -50%);
-                    color: $light-color-2;
                     
                     .portfolio-title {
                         color: $light-color;
@@ -423,11 +461,12 @@ section {
     top: 0;
     width: 100vw;
     height: 100vh;
-    background-color: RGBA(0,0,0,0.9);
+    background-color: rgba($dark-color-2, 0.75);
     overflow-y: auto;
+    color: $dark-color-2;    
 
     .close {
-        color: $accent-color-2;
+        color: $accent-color;
         position: absolute;
         top: 0;
         right: 1rem;
@@ -443,7 +482,6 @@ section {
     
     .modal-content {
         position: relative;
-        background-color: $light-color-2;
         margin: auto;
         padding: 0;
         width: 680px;
@@ -473,8 +511,7 @@ section {
 
 /*EXPERIENCE*/
 #resume {
-    background: radial-gradient(circle, rgba($primary-color, 0.5) -20%, rgba($dark-color, 0.5) 120%);    
-    color: $light-color-2;
+    background: radial-gradient(circle, rgba($dark-color, 0.75) -20%, rgba($dark-color-2, 0.75) 120%);    
 
     .skills {
         padding-bottom: 2rem;
@@ -493,12 +530,12 @@ section {
 
                 .frontend-icon,
                 i {
-                    color: $accent-color;
+                    color: $light-color;
                 }
             }
 
             .subsection-heading {
-                color: $accent-color;
+                color: $accent-color-2;
                 padding-right: .5rem;
             }
         }
@@ -521,6 +558,7 @@ section {
 
 /*CONTACT*/
 #contact {
+    background: radial-gradient(circle, $dark-color -20%, $dark-color-2 120%);    
 
     .contacts {
         display: grid;
@@ -530,18 +568,16 @@ section {
         grid-gap: 1rem;
         font-size: 1.5rem;
         text-align: center;
-        padding-bottom: 2rem;
+        padding: 2rem;
     
         i {
             color: grey;
         }
         
         i:hover {
-            color: $accent-color-2;
+            color: $accent-color;
         }
     }
-    
-    
 }
 
 /*FOOTER*/

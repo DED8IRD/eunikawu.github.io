@@ -4,14 +4,6 @@ function vh(v) {
   return (v * h) / 100;
 }
 
-// Scroll reveal child elements
-function revealChildren(elements) {
-    sr.reveal(...elements, {
-        origin: 'bottom',
-        viewFactor: 1,
-    }, 500);        
-}
-
 $(document).ready(function() {
     window.sr = ScrollReveal({
         duration: 500,
@@ -39,6 +31,10 @@ $(document).ready(function() {
              $('.navbar').removeClass('fixed-top');
         }
     });
+
+    // Copy business card content to card stack
+    const cardContents = $('.biz-card-front').html()
+    $('.biz-card-under').html(cardContents)
     
     // Lightbox for portfolio items
     $(document).on('click', '.portfolio-container', function(event) {
@@ -62,7 +58,7 @@ $(document).ready(function() {
     });
 
     // Scroll reveal animations
-    sr.reveal('section')
+    sr.reveal('section > *')
     sr.reveal('.projects > .portfolio-item', {
         origin: 'left',
         distance: '10%',
@@ -76,6 +72,17 @@ $(document).ready(function() {
         interval: 300,
         duration: 700,
         easing: "ease-in-out",        
-        afterReveal: () => revealChildren($('.skill'))
+    })
+    sr.reveal('.contacts > a > i', {
+        origin: 'left',
+        distance: '10%',
+        interval: 200,
+        duration: 600,
+        easing: "ease-in-out",        
+    })
+    sr.reveal('.click-me', {
+        origin: 'top',
+        distance: '0.5rem',
+        duration: 700,
     })
 });
