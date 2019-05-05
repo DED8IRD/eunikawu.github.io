@@ -1,10 +1,12 @@
-// Calc viewport height
-function vh(v) {
-  const h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-  return (v * h) / 100;
-}
+$('body').addClass('js-loading');
 
 $(document).ready(function() {
+    // Preloader animation
+    $(window).on('load', function() {
+        $('body').removeClass('js-loading')
+        $('.loading').fadeOut('slow')
+    })
+
     window.sr = ScrollReveal({
         duration: 500,
         delay: 200,
@@ -13,7 +15,6 @@ $(document).ready(function() {
 
     // Add scrollspy to <body>
     const navOffset = $('.navbar').height();
-    $('#navbar').attr('data-offset-top', vh(100) - navOffset)
     $('body').scrollspy({target: ".navbar", offset: navOffset});
     
     // Closes responsive menu when a scroll trigger link is clicked
