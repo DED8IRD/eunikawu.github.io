@@ -380,21 +380,15 @@ section * {
   background: radial-gradient(circle, #3A4147 -20%, #241023 120%);
 }
 #home #about-me {
-  display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-#home #about-me .description {
-  flex: 0 0 75%;
 }
 #home #about-me .description p {
   text-align: justify;
   padding-bottom: 1rem;
 }
 #home #about-me #avatar {
-  padding: 1em;
-  align-self: flex-start;
+  padding: 1.5rem;
   width: 200px;
   height: 200px;
   border-radius: 50%;

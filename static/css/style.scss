@@ -432,13 +432,10 @@ section {
     background: radial-gradient(circle, $dark-color -20%, $dark-color-2 120%);    
 
     #about-me {
-        display: flex;
+        justify-content: center;
         align-items: center;
-        justify-content: space-between;
-        flex-wrap: wrap;
 
         .description {
-            flex: 0 0 75%;
             p {
                 text-align: justify;
                 padding-bottom: 1rem;
@@ -446,8 +443,7 @@ section {
         }
 
         #avatar {
-            padding: 1em;
-            align-self: flex-start;
+            padding: 1.5rem;
             width: 200px;
             height: 200px;
             border-radius: 50%;
