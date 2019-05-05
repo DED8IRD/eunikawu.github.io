@@ -1,9 +1,6 @@
-$('body').addClass('js-loading');
-
 $(document).ready(function() {
     // Preloader animation
     $(window).on('load', function() {
-        $('body').removeClass('js-loading')
         $('.loading').fadeOut('slow')
     })
 

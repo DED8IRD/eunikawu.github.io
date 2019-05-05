@@ -77,13 +77,6 @@ body, html {
 }
 
 /* LOADING ANIMATION */
-// pause animation before page loads
-.js-loading *,
-.js-loading *:before,
-.js-loading *:after {
-    animation-play-state: paused !important;
-}
-
 .loading {
     display: grid;
     position: fixed;
