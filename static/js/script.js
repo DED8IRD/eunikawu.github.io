@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    $('.loading').fadeIn('fast')
     // Preloader animation
     $(window).on('load', function() {
         $('.loading').fadeOut('slow')
