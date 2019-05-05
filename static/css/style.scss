@@ -77,7 +77,11 @@ body, html {
 }
 
 /* LOADING ANIMATION */
-.loading {
+.no-js .loading {
+    display: none;
+}
+
+.js .loading {
     display: flex;
     justify-content: center;
     align-items: center;

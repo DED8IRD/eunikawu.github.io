@@ -95,7 +95,11 @@ body, html {
 }
 
 /* LOADING ANIMATION */
-.loading {
+.no-js .loading {
+  display: none;
+}
+
+.js .loading {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -105,7 +109,7 @@ body, html {
   background: #222222;
   z-index: 1000;
 }
-.loading .lds-heart {
+.js .loading .lds-heart {
   position: relative;
   margin: auto;
   width: 64px;
@@ -113,7 +117,7 @@ body, html {
   transform: rotate(45deg);
   transform-origin: 32px 32px;
 }
-.loading .lds-heart div {
+.js .loading .lds-heart div {
   top: 23px;
   left: 19px;
   position: absolute;
@@ -123,8 +127,8 @@ body, html {
   will-change: transform;
   animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-.loading .lds-heart div:after,
-.loading .lds-heart div:before {
+.js .loading .lds-heart div:after,
+.js .loading .lds-heart div:before {
   content: " ";
   position: absolute;
   display: block;
@@ -132,11 +136,11 @@ body, html {
   height: 26px;
   background: coral;
 }
-.loading .lds-heart div:before {
+.js .loading .lds-heart div:before {
   left: -17px;
   border-radius: 50% 0 0 50%;
 }
-.loading .lds-heart div:after {
+.js .loading .lds-heart div:after {
   top: -17px;
   border-radius: 50% 50% 0 0;
 }
