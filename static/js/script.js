@@ -1,8 +1,10 @@
-$(document).ready(function() {
+$(function() {
     $('.loading').fadeIn('fast')
     // Preloader animation
     $(window).on('load', function() {
-        $('.loading').fadeOut('slow')
+        $('.loading').fadeOut('slow', function() {
+            $(this).remove()
+        })
     })
 
     window.sr = ScrollReveal({
