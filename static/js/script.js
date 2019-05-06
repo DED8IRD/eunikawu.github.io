@@ -1,5 +1,4 @@
 $(function() {
-    $('.loading').fadeIn('fast')
     // Preloader animation
     $(window).on('load', function() {
         $('.loading').fadeOut('slow', function() {
@@ -18,7 +17,7 @@ $(function() {
     $('body').scrollspy({target: ".navbar", offset: navOffset});
     
     // Closes responsive menu when a scroll trigger link is clicked
-    $('#navigation').click(function() {
+    $('#navigation').on('click', function() {
         $('.navbar-collapse').collapse('hide');
     }); 
 
