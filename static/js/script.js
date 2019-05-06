@@ -1,9 +1,7 @@
 $(function() {
     // Preloader animation
-    $(window).on('load', function() {
-        $('.loading').fadeOut('slow', function() {
-            $(this).remove()
-        })
+    $('.loading').fadeOut('slow', function() {
+        $(this).remove()
     })
 
     window.sr = ScrollReveal({
