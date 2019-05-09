@@ -179,16 +179,6 @@ a {
     align-items: center;      
     background-size: cover;
 
-    // .overlay {
-    //     position: absolute;
-    //     background-color: $dark-color;
-    //     width: 100vw;
-    //     height: 100vh;
-    //     top: calc(-50vh + 50%);
-    //     left: calc(-50vw + 50%);
-    //     opacity: 0;
-    // }
-
     .card-container,
     .biz-card,
     .biz-card-under,
@@ -218,10 +208,12 @@ a {
         }
 
         .biz-card-under {
-            box-shadow: 1rem 2rem 3rem rgba(black, .4);
+            box-shadow: 1rem 2rem 3rem rgba(black, .2);
+            filter: brightness(90%);
 
             &.one {
                 transform: rotateX(60deg) rotateY(1deg) rotateZ(45deg) translateZ(-2rem);
+                box-shadow: 1rem 2rem 2rem rgba(black, .4);
             }
             &.two {
                 transform: rotateX(60deg) rotateY(1deg) rotateZ(45deg) translateZ(-1rem);
@@ -233,7 +225,6 @@ a {
             background-color: $dark-color-2;
             font-family: $card-font;
             color: $light-color-2;
-            // text-transform: lowercase;
         }
 
 
@@ -268,21 +259,10 @@ a {
             }                 
         }
 
-        .biz-card-front {
-            // transform: rotateY(180deg);
-        }
-
         .biz-card-back {
             transform: rotateX(180deg);
-            // grid-template-areas: 
-            //     "top-left    . . . . .     top-right"
-            //     ".          . . name . .           ."
-            //     ".           . . . . .             ."
-            //     ".         . . social . .          ."
-            //     "bottom-left . . . . . bottom-right";
 
             .name-card {
-                // grid-area: name;
                 position: absolute;
                 text-align: right;
                 padding: 2%;
@@ -296,7 +276,6 @@ a {
             }
 
             .social {
-                // grid-area: social;
                 display: grid;
                 grid-template-columns: auto auto;
                 grid-column-gap: 0.5rem;
@@ -346,9 +325,9 @@ a {
                 }                            
             }
 
-            &-under,
             &-front,
             &-back,
+            &-under,
             &:after,
             &:before {
                 position: absolute;
@@ -632,10 +611,7 @@ section {
 
             .card-header {
                 color: $accent-color-2;
-
-                .frontend-icon {
-                    font-weight: bold;
-                }
+                font-weight: bold;
 
                 .frontend-icon,
                 i {

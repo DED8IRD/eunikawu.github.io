@@ -145,10 +145,12 @@ a {
   margin: 0.1rem;
 }
 .hero .card-container .biz-card-under {
-  box-shadow: 1rem 2rem 3rem rgba(0, 0, 0, 0.4);
+  box-shadow: 1rem 2rem 3rem rgba(0, 0, 0, 0.2);
+  filter: brightness(90%);
 }
 .hero .card-container .biz-card-under.one {
   transform: rotateX(60deg) rotateY(1deg) rotateZ(45deg) translateZ(-2rem);
+  box-shadow: 1rem 2rem 2rem rgba(0, 0, 0, 0.4);
 }
 .hero .card-container .biz-card-under.two {
   transform: rotateX(60deg) rotateY(1deg) rotateZ(45deg) translateZ(-1rem);
@@ -244,7 +246,7 @@ a {
 .hero .card-container .biz-card-front:after, .hero .card-container .biz-card-back:after, .hero .card-container .biz-card-under:after {
   color: black;
 }
-.hero .card-container .biz-card-under, .hero .card-container .biz-card-front, .hero .card-container .biz-card-back, .hero .card-container .biz-card:after, .hero .card-container .biz-card:before {
+.hero .card-container .biz-card-front, .hero .card-container .biz-card-back, .hero .card-container .biz-card-under, .hero .card-container .biz-card:after, .hero .card-container .biz-card:before {
   position: absolute;
   display: grid;
   width: 100%;
@@ -478,9 +480,6 @@ section * {
 #resume .skills .skill .card-header,
 #resume .skills .skill * .card-header {
   color: #6B0504;
-}
-#resume .skills .skill .card-header .frontend-icon,
-#resume .skills .skill * .card-header .frontend-icon {
   font-weight: bold;
 }
 #resume .skills .skill .card-header .frontend-icon,
