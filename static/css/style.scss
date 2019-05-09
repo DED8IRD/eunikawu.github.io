@@ -20,17 +20,19 @@ $accent-color-2: #6B0504;
     @return $value / ($value * 0 + 1);
 }
 
-@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size, $line-height) {
     $u1: unit($min-vw);
     $u2: unit($max-vw);
     $u3: unit($min-font-size);
     $u4: unit($max-font-size);
+    $u5: unit($line-height);
 
-    @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 == $u5 {
         & {
             font-size: $min-font-size;
             @media screen and (min-width: $min-vw) {
                 font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+                line-height: calc(#{$line-height} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
             }
             @media screen and (min-width: $max-vw) {
                 font-size: $max-font-size;
@@ -44,32 +46,36 @@ $min_width: 320px;
 $max_width: 2400px;
 $min_font: 14px;
 $max_font: 26px;
+$line_height: 14px;
 
 $mod_1: 1.2; // mobile
 $mod_2: 1.5; // desktop
 
 h1 {  
     font-size: $mod_1*$mod_1*$mod_1*$mod_1 *1rem; 
-    @include fluid-type($min_width, $max_width, $mod_1*$mod_1*$mod_1 *$min_font, $mod_2*$mod_2*$mod_2 *$min_font);
+    @include fluid-type($min_width, $max_width, $mod_1*$mod_1*$mod_1 *$min_font, $mod_2*$mod_2*$mod_2 *$min_font, $line-height);
 }
 h2 {  
     font-size: $mod_1*$mod_1*$mod_1 *1rem; 
-    @include fluid-type($min_width, $max_width, $mod_1*$mod_1*$mod_1 *$min_font, $mod_2*$mod_2*$mod_2 *$min_font);
+    @include fluid-type($min_width, $max_width, $mod_1*$mod_1*$mod_1 *$min_font, $mod_2*$mod_2*$mod_2 *$min_font, $line-height);
 }
 h3 { 
     font-size: $mod_1*$mod_1 *1rem;
-    @include fluid-type($min_width, $max_width, $mod_1*$mod_1 *$min_font, $mod_2*$mod_2 *$min_font);
+    @include fluid-type($min_width, $max_width, $mod_1*$mod_1 *$min_font, $mod_2*$mod_2 *$min_font, $line-height);
 }
-
+h4 { 
+    font-size: $mod_1 *1rem;
+    @include fluid-type($min_width, $max_width, $mod_1 *$min_font, $mod_2 *$min_font, $line-height);
+}
 p {
     font-size: $mod_1 *1rem;
-    @include fluid-type($min_width, $max_width, $mod_1 *$min_font, $mod_2 *$min_font);    
+    @include fluid-type($min_width, $max_width, $mod_1 *$min_font, $mod_2 *$min_font, $line-height);    
 }
 
 body, html {
     font-family: $font-stack;
     color: $light-color-2;
-    @include fluid-type($min_width, $max_width, $min_font, $max_font);
+    @include fluid-type($min_width, $max_width, $min_font, $max_font, $line-height);
     padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
     height: 100%;
     width: 100%;
@@ -204,6 +210,13 @@ a {
     .card-container {
         position: relative;  
 
+        p {
+            $min-card-font: 9px;
+            font-size: 12px;
+            @include fluid-type(275px, $max_width, $mod_1 * $min-card-font, $mod_2 * $min-card-font, $min-card-font);    
+            margin: 0.1rem;
+        }
+
         .biz-card-under {
             box-shadow: 1rem 2rem 3rem rgba(black, .4);
 
@@ -220,51 +233,78 @@ a {
             background-color: $dark-color-2;
             font-family: $card-font;
             color: $light-color-2;
-            text-transform: lowercase;
+            // text-transform: lowercase;
         }
 
 
         .biz-card-front,
         .biz-card-under {
+            display: flex;
+            align-items: center;
+            justify-content: center;            
             transform: rotateX(0deg);
 
-            grid-template-areas: 
-                "top-left    . . . . .     top-right"
-                ".         . . name . .            ."
-                ".       . . company . .           ."
-                ".         . . job . .             ."
-                "bottom-left . . . . . bottom-right";
-    
-            .name-card {
-                grid-area: name;
-                font-weight: bold;
-            }
+            .card-body {
+                padding: 5%;
+                border-style: solid;
+                border-color: $accent-color;
+                background-color: $dark-color-2;
+                text-align: left;
+        
+                .name-card {
+                    grid-area: name;
+                    font-weight: bold;
+                    color: $light-color-2;
+                }
 
-            .company {
-                grid-area: company;
-            }   
+                .company {
+                    grid-area: company;
+                    color: $light-color;
+                }   
 
-            .job-title {
-                grid-area: job;
-            }                    
+                .job-title {
+                    grid-area: job;
+                }   
+            }                 
         }
+
+        .biz-card-front {
+            // transform: rotateY(180deg);
+        }
+
         .biz-card-back {
             transform: rotateX(180deg);
-            grid-template-areas: 
-                "top-left    . . . . .     top-right"
-                ".          . . name . .           ."
-                ".           . . . . .             ."
-                ".         . . social . .          ."
-                "bottom-left . . . . . bottom-right";
+            // grid-template-areas: 
+            //     "top-left    . . . . .     top-right"
+            //     ".          . . name . .           ."
+            //     ".           . . . . .             ."
+            //     ".         . . social . .          ."
+            //     "bottom-left . . . . . bottom-right";
 
             .name-card {
-                grid-area: name;
+                // grid-area: name;
+                position: absolute;
+                text-align: right;
+                padding: 2%;
+                top: 5%;
+                width: 100%;
+                background-color: $light-color;
+
+                > h4 {
+                    margin: 0;
+                }
             }
 
             .social {
-                grid-area: social;
+                // grid-area: social;
                 display: grid;
-                grid-template-columns: repeat(3, auto);
+                grid-template-columns: auto auto;
+                grid-column-gap: 0.5rem;
+                justify-items: start;
+                align-items: center;
+                position: absolute;
+                left: 5%;
+                bottom: 5%;
             }
         }        
 
@@ -281,7 +321,7 @@ a {
             }
 
             &:hover { 
-                transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(1rem) translateY(1rem) scale(1.2);
+                transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(1rem) scale(1.2);
             }
             &:focus {
                 transform-origin: 50% 100%;
@@ -297,8 +337,8 @@ a {
             }
 
             &-front,
-            &-back {
-                padding: 1.5rem 1rem 1rem 1rem;
+            &-back,
+            &-under {
                 backface-visibility: hidden;
                 will-change: transform, scale;
                 &:after {

@@ -32,7 +32,7 @@ $(function() {
 
     // Copy business card content to card stack
     const cardContents = $('.biz-card-front').html()
-    $('.biz-card-under').html(cardContents)
+    $('.biz-card-under').append(cardContents)
     
     // Lightbox for portfolio items
     $(document).on('click', '.portfolio-container', function(event) {
