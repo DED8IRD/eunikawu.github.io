@@ -504,6 +504,19 @@ section * {
 #resume .dl-resume-btn {
   margin-bottom: 1rem;
 }
+#resume #resume-pdf-container {
+  position: relative;
+  padding-bottom: 100%;
+  margin-bottom: 1rem;
+}
+#resume #resume-pdf-container #resume-pdf {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
 /*CONTACT*/
 #contact {
   background: radial-gradient(circle, #3A4147 -20%, #241023 120%);
