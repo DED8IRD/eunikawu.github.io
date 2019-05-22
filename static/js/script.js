@@ -55,6 +55,14 @@ $(function() {
         });
     });
 
+    // Fullscreen resume pdf
+    const resume = $('#resume-pdf').get(0)
+    $('#dl-resume-btn').on('click', function(event) {
+        if ($('#resume-pdf:visible').length === 0 && !resume.fullscreenElement) {
+            resume.requestFullscreen()
+        }
+    })
+
     // Scroll reveal animations
     sr.reveal('section > *')
     sr.reveal('.projects > .portfolio-item', {

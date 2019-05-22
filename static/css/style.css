@@ -501,7 +501,7 @@ section * {
 #resume .skills .skill-title {
   padding-left: 0.75rem;
 }
-#resume .dl-resume-btn {
+#resume #dl-resume-btn {
   margin-bottom: 1rem;
 }
 #resume #resume-pdf-container {
