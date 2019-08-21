@@ -1,10 +1,10 @@
 // webpack.config.js
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const devMode = process.env.NODE_ENV !== 'production';
 
 
 module.exports = {
+  mode: 'development', 
   entry: './src/index.js',
   output: {
     filename: 'main.js',
@@ -50,5 +50,9 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin()
-  ]
+  ],
+  // optimization: {
+  //   nodeEnv: 'production',
+  //   minimize: true,
+  // },  
 };
