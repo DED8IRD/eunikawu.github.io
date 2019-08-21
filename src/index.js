@@ -1,3 +1,10 @@
+import $ from 'jquery';
+import ScrollReveal from 'scrollreveal'
+import 'bootstrap'
+import '@fortawesome/fontawesome-free/js/all'
+import './scss/style.scss';
+
+
 $(function() {
     // Preloader animation
     $('.loading').fadeOut('slow', function() {

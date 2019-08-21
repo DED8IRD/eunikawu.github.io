@@ -1,4 +1,5 @@
 /*IMPORTS*/
+@import "~bootstrap/scss/bootstrap";
 @import url(https://fonts.googleapis.com/css?family=Signika);
 @import url(https://fonts.googleapis.com/css?family=Cabin);
 @import url(https://fonts.googleapis.com/css?family=Ubuntu);
@@ -170,7 +171,7 @@ a {
             rgba($light-color, 0.2),
             rgba($accent-color-2, 0.2),            
         ),
-        url(../images/hero-bkgd.jpg) no-repeat center center/cover;
+        url('../../static/images/hero-bkgd.jpg') no-repeat center center/cover;
 
     width: 100vw;
     height: 100vh;
@@ -345,7 +346,7 @@ a {
     .arrow-btn {
         display: block;
         z-index: 100;
-        i {
+        i, svg {
             color: $accent-color;
         }
     }
@@ -353,7 +354,7 @@ a {
     .arrow-btn:hover, 
     .arrow-btn:focus {
         box-shadow: none;        
-        i {
+        i, svg {
             color: $light-color;
         }
     }
@@ -484,7 +485,7 @@ section {
             rgba($dark-color-2, 0.5),            
             rgba($dark-color-2, 0.7),
         ),    
-        url(../images/egg-texture.jpg) center center/cover;
+        url('../../static/images/egg-texture.jpg') center center/cover;
 
     .portfolio-item {
         padding: 1rem;
@@ -614,7 +615,7 @@ section {
                 font-weight: bold;
 
                 .frontend-icon,
-                i {
+                i, svg {
                     color: $light-color;
                 }
             }
@@ -657,6 +658,10 @@ section {
 
 /*CONTACT*/
 #contact {
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    height: 100vh;    
     background: radial-gradient(circle, $dark-color -20%, $dark-color-2 120%);    
 
     .contacts {
@@ -670,11 +675,11 @@ section {
         padding-top: 2rem;
         padding-bottom: 2rem;
     
-        i {
+        i, svg {
             color: grey;
         }
         
-        i:hover {
+        i:hover, svg:hover {
             color: $accent-color;
         }
     }
@@ -686,7 +691,7 @@ section {
     padding: 2rem 0;
     text-align: center;
     
-    i {
+    i, svg {
         color: coral;
     }
 }
