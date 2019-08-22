@@ -7,7 +7,7 @@ const devMode = process.env.NODE_ENV !== 'production';
 
 
 module.exports = {
-  mode: (devMode ? 'development' : 'production'), 
+  mode: 'production', 
   entry: './src/index.js',
   output: {
     filename: 'main.js',
