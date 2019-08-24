@@ -4,22 +4,17 @@ import ScrollReveal from 'scrollreveal'
 
 import style from './scss/style.scss'
 
-// import static images
-import portrait from '../static/images/portrait.png'
-import DAVE from '../static/images/projects/DAVE.png'
-import EchoVisualization from '../static/images/projects/EchoVisualization.png'
-import EmVibe from '../static/images/projects/EmVibe.png'
-import NodingBat from '../static/images/projects/NodingBat.png'
-import ProcessDashboard from '../static/images/projects/ProcessDashboard.png'
-import SENTIENCE from '../static/images/projects/SENTIENCE.png'
-import favicon from '../static/images/icons/favicon.ico'
+// // import static images
+// import portrait from '../static/images/portrait.png'
+// import DAVE from '../static/images/projects/DAVE.png'
+// import EchoVisualization from '../static/images/projects/EchoVisualization.png'
+// import EmVibe from '../static/images/projects/EmVibe.png'
+// import NodingBat from '../static/images/projects/NodingBat.png'
+// import ProcessDashboard from '../static/images/projects/ProcessDashboard.png'
+// import SENTIENCE from '../static/images/projects/SENTIENCE.png'
+// import favicon from '../static/images/icons/favicon.ico'
 
 $(function() {
-    // Preloader animation
-    $('.loading').fadeOut('slow', function() {
-        $(this).remove()
-    })
-
     window.sr = ScrollReveal({
         duration: 500,
         delay: 200,
