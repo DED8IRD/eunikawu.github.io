@@ -69,6 +69,7 @@ $(function() {
     // Fullscreen resume pdf
     const resume = $('#resume-pdf').get(0)
     $('#dl-resume-btn').on('click', function(event) {
+        $('#resume-pdf').attr('src', 'https://drive.google.com/file/d/1zf3sAd7BcNIprBl9OHaJApp94Sz6CKbJ/preview')
         if ($('#resume-pdf:visible').length === 0 && !resume.fullscreenElement) {
             resume.requestFullscreen()
         }
