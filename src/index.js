@@ -1,7 +1,5 @@
 import $ from 'jquery';
 import ScrollReveal from 'scrollreveal'
-import 'bootstrap'
-import '@fortawesome/fontawesome-free/js/all'
 
 import style from './scss/style.scss'
 
