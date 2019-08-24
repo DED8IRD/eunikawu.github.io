@@ -1,3 +1,6 @@
+# src static directory
+/static/
+
 # Logs
 logs
 *.log
