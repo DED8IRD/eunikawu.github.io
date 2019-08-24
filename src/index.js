@@ -1,4 +1,3 @@
-import $ from 'jquery';
 import ScrollReveal from 'scrollreveal'
 
 import style from './scss/style.scss'
