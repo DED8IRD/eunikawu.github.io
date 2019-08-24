@@ -4,6 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
+const imageminMozjpeg = require('imagemin-mozjpeg')
 const devMode = process.env.NODE_ENV !== 'production';
 
 
@@ -44,6 +46,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html',
       filename: '../index.html'
+    }),
+    new ImageminPlugin({
+      pngquant: ({quality: [0.5, 0.5]}),
+      plugins: [imageminMozjpeg({quality: 50})]
     })
   ],
   module: {
