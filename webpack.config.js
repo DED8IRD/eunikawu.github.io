@@ -4,8 +4,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const TerserJSPlugin = require('terser-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
-const ImageminPlugin = require('imagemin-webpack-plugin').default
-const imageminMozjpeg = require('imagemin-mozjpeg')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const devMode = process.env.NODE_ENV !== 'production'
 
@@ -46,32 +44,55 @@ module.exports = {
             template: './src/index.html',
             filename: '../index.html'
         }),
-        new ImageminPlugin({
-            pngquant: ({ quality: [0.5, 0.5] }),
-            plugins: [imageminMozjpeg({ quality: 50 })]
-        }),
-        new CopyWebpackPlugin([
-            { from: 'static/images', to: 'static/images' }
-        ])
+        new CopyWebpackPlugin([{
+            from: 'img/**/**',
+            to: path.resolve(__dirname, 'dist')
+        }])
     ],
     module: {
         rules: [{
-                test: /\.(png|jpe?g|gif|ico)$/i,
+                test: /\.(png|jpe?g|gif|ico|svg)$/i,
                 use: [{
-                    loader: 'file-loader',
-                    options: {
-                        name: (devMode ? '[path][name].[ext]' : '[contenthash].[ext]'),
-                        publicPath: './',
-                        useRelativePaths: true
+                        loader: 'file-loader',
+                        options: {
+                            name: (devMode ? '[path][name].[ext]' : '[contenthash].[ext]'),
+                            publicPath: './',
+                            useRelativePaths: true
+                        }
+                    },
+                    {
+                        loader: 'image-webpack-loader',
+                        options: {
+                            mozjpeg: {
+                                progressive: true,
+                                quality: 65
+                            },
+                            // optipng.enabled: false will disable optipng
+                            optipng: {
+                                enabled: false,
+                            },
+                            pngquant: {
+                                quality: '65-90',
+                                speed: 4
+                            },
+                            gifsicle: {
+                                interlaced: false,
+                            },
+                            // the webp option will enable WEBP
+                            webp: {
+                                quality: 75
+                            }
+                        }
                     }
-                }],
+                ]
             },
             {
+
                 test: /\.(scss)$/,
                 use: [{
                         loader: MiniCssExtractPlugin.loader,
                         options: {
-                          hmr: devMode,
+                            hmr: devMode,
                         },
                     },
                     'css-loader',
