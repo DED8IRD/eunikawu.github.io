@@ -11,7 +11,7 @@ const devMode = process.env.NODE_ENV !== 'production'
 
 
 module.exports = {
-    mode: 'production',
+    mode: (devMode ? 'development' : 'production'),
     entry: './src/index.js',
     output: {
         filename: 'main.js',
@@ -51,7 +51,7 @@ module.exports = {
             plugins: [imageminMozjpeg({ quality: 50 })]
         }),
         new CopyWebpackPlugin([
-            { from: 'static/images', to: './dist/static/images' }
+            { from: 'static/images', to: 'static/images' }
         ])
     ],
     module: {
@@ -70,9 +70,9 @@ module.exports = {
                 test: /\.(scss)$/,
                 use: [{
                         loader: MiniCssExtractPlugin.loader,
-                        // options: {
-                        //   hmr: devMode,
-                        // },
+                        options: {
+                          hmr: devMode,
+                        },
                     },
                     'css-loader',
                     {

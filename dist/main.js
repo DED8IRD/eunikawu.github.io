@@ -174,7 +174,7 @@ eval("\n\nvar _jquery = __webpack_require__(/*! jquery */ \"./node_modules/jquer
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/scss/style.scss?");
+eval("// extracted by mini-css-extract-plugin\n    if(false) { var cssReload; }\n  \n\n//# sourceURL=webpack:///./src/scss/style.scss?");
 
 /***/ })
 
