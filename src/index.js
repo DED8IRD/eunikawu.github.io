@@ -4,15 +4,15 @@ import ScrollReveal from 'scrollreveal'
 
 import style from './scss/style.scss'
 
-// import static images
-import portrait from '../static/images/portrait.png'
-import DAVE from '../static/images/projects/DAVE.png'
-import EchoVisualization from '../static/images/projects/EchoVisualization.png'
-import EmVibe from '../static/images/projects/EmVibe.png'
-import NodingBat from '../static/images/projects/NodingBat.png'
-import ProcessDashboard from '../static/images/projects/ProcessDashboard.png'
-import SENTIENCE from '../static/images/projects/SENTIENCE.png'
-import favicon from '../static/images/icons/favicon.ico'
+// // import static images
+// import portrait from '../static/images/portrait.png'
+// import DAVE from '../static/images/projects/DAVE.png'
+// import EchoVisualization from '../static/images/projects/EchoVisualization.png'
+// import EmVibe from '../static/images/projects/EmVibe.png'
+// import NodingBat from '../static/images/projects/NodingBat.png'
+// import ProcessDashboard from '../static/images/projects/ProcessDashboard.png'
+// import SENTIENCE from '../static/images/projects/SENTIENCE.png'
+// import favicon from '../static/images/icons/favicon.ico'
 
 $(function() {
     window.sr = ScrollReveal({
@@ -69,7 +69,6 @@ $(function() {
     // Fullscreen resume pdf
     const resume = $('#resume-pdf').get(0)
     $('#dl-resume-btn').on('click', function(event) {
-        $('#resume-pdf').attr('src', 'https://drive.google.com/file/d/1zf3sAd7BcNIprBl9OHaJApp94Sz6CKbJ/preview')
         if ($('#resume-pdf:visible').length === 0 && !resume.fullscreenElement) {
             resume.requestFullscreen()
         }
