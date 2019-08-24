@@ -1,9 +1,7 @@
 import $ from 'jquery';
 import ScrollReveal from 'scrollreveal'
-import 'bootstrap'
-import '@fortawesome/fontawesome-free/js/all'
-import './scss/style.scss';
 
+import style from './scss/style.scss'
 
 $(function() {
     // Preloader animation
