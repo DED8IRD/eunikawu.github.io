@@ -67,14 +67,17 @@ $(function() {
     });
 
     // Fullscreen resume pdf
-    const resume = $('#resume-pdf')
     $('#dl-resume-btn').on('click', function(event) {
-        resume.attr('src', 'https://drive.google.com/file/d/1zf3sAd7BcNIprBl9OHaJApp94Sz6CKbJ/preview')
-        resume.on('load', function() {
-            if ($('#resume-pdf:visible').length === 0 && !resume.fullscreenElement) {
-                resume.requestFullscreen()
-            }
-        })
+        if ($('#resume-pdf:visible').length === 0) {
+            const iframe = $('#resume-pdf')
+            const resumeSrc = 'https://drive.google.com/file/d/1zf3sAd7BcNIprBl9OHaJApp94Sz6CKbJ/'
+            iframe.attr('src', resumeSrc + 'preview')
+            const resume = iframe.get(0)
+            const rfs = resume.requestFullscreen || resume.webkitRequestFullScreen || resume.mozRequestFullScreen || resume.msRequestFullscreen
+            if (!resume.fullscreenElement) {
+                rfs.call(resume);
+            }            
+        }        
     })
 
     // Scroll reveal animations
