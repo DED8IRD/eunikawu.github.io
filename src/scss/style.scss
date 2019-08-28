@@ -384,22 +384,20 @@ section {
     background: radial-gradient(circle, $dark-color -20%, $dark-color-2 120%);    
 
     #about-me {
-        justify-content: center;
-        align-items: center;
-
-        .description {
-            p {
-                text-align: justify;
-                padding-bottom: 1rem;
-            }       
-        }
-
         #avatar {
             padding: 1.5rem;
-            width: 200px;
-            height: 200px;
+            max-width: 250px;
+            width: 100%;
+            height: 100%;
             border-radius: 50%;
         }
+    }
+
+    .description {
+        p {
+            text-align: justify;
+            padding-bottom: 1rem;
+        }       
     }
 }
 
