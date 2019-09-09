@@ -111,6 +111,7 @@ a {
 
     .card-container,
     .biz-card,
+    .biz-card-front,
     .biz-card-under,
     .biz-card:hover,
     .biz-card:focus,
@@ -153,6 +154,7 @@ a {
             }
         }         
 
+        .biz-card-front,
         .biz-card-under,
         .biz-card {
             background-color: $dark-color-2;
@@ -173,8 +175,6 @@ a {
                 padding: 5%;
                 border-style: solid;
                 border-color: $accent-color;
-                background-color: $dark-color-2;
-                text-align: left;
         
                 .name-card {
                     grid-area: name;
