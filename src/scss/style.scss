@@ -50,8 +50,8 @@ $min_font: 14px;
 $max_font: 26px;
 $line_height: 14px;
 
-$mod_1: 1.2; // mobile
-$mod_2: 1.5; // desktop
+$mod_1: 1.2; /* mobile*/
+$mod_2: 1.5; /* desktop*/
 
 h1 {  
     font-size: $mod_1*$mod_1*$mod_1*$mod_1 *1rem; 
@@ -86,14 +86,15 @@ body, html {
 
 a {
     color: $accent-color;
-    // text-decoration: underline;
+    /* text-decoration: underline;*/
 }
 
 /*HERO*/
 .hero {
+    position: -webkit-sticky;
     position: sticky;
     display: flex;
-    // linear gradient over background image to give illusion of perspective
+    /* linear gradient over background image to give illusion of perspective*/
     background: 
         linear-gradient(
             rgba($light-color, 0.2),
@@ -138,14 +139,17 @@ a {
 
         .biz-card-under {
             box-shadow: 1rem 2rem 3rem rgba(black, .2);
-            filter: brightness(90%);
+            -webkit-filter: brightness(90%);
+                    filter: brightness(90%);
 
             &.one {
-                transform: rotateX(60deg) rotateY(1deg) rotateZ(45deg) translateZ(-2rem);
+                -webkit-transform: rotateX(60deg) rotateY(1deg) rotateZ(45deg) translateZ(-2rem);
+                        transform: rotateX(60deg) rotateY(1deg) rotateZ(45deg) translateZ(-2rem);
                 box-shadow: 1rem 2rem 2rem rgba(black, .4);
             }
             &.two {
-                transform: rotateX(60deg) rotateY(1deg) rotateZ(45deg) translateZ(-1rem);
+                -webkit-transform: rotateX(60deg) rotateY(1deg) rotateZ(45deg) translateZ(-1rem);
+                        transform: rotateX(60deg) rotateY(1deg) rotateZ(45deg) translateZ(-1rem);
             }
         }         
 
@@ -162,7 +166,8 @@ a {
             display: flex;
             align-items: center;
             justify-content: center;            
-            transform: rotateX(0deg);
+            -webkit-transform: rotateX(0deg);            
+                    transform: rotateX(0deg);
 
             .card-body {
                 padding: 5%;
@@ -189,7 +194,8 @@ a {
         }
 
         .biz-card-back {
-            transform: rotateX(180deg);
+            -webkit-transform: rotateX(180deg);
+                    transform: rotateX(180deg);
 
             .name-card {
                 position: absolute;
@@ -205,7 +211,9 @@ a {
             }
 
             .social {
+                display: -ms-grid;
                 display: grid;
+                -ms-grid-columns: auto auto;
                 grid-template-columns: auto auto;
                 grid-column-gap: 0.5rem;
                 justify-items: start;
@@ -218,22 +226,29 @@ a {
 
         .biz-card {
             box-shadow: 1rem 1rem 1rem rgba(black, .2);
-            transform: rotateX(60deg) rotateZ(45deg);
-            transform-style: preserve-3d;
-            perspective: 150rem;
+            -webkit-transform: rotateX(60deg) rotateZ(45deg);
+                    transform: rotateX(60deg) rotateZ(45deg);
+            -webkit-transform-style: preserve-3d;
+                    transform-style: preserve-3d;
+            -webkit-perspective: 150rem;
+                    perspective: 150rem;
 
             .click-me {
                 position: absolute;
                 top: -20%;
-                transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) !important;
+                -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) !important;
+                        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) !important;
             }
 
             &:hover { 
-                transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(1rem) scale(1.2);
+                -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(1rem) scale(1.2); 
+                        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(1rem) scale(1.2);
             }
-            &:focus {
-                transform-origin: 50% 100%;
-                transform: rotateX(-180deg) rotateY(0deg) rotateZ(0deg) translateZ(1rem) translateY(100%) scale(1.2);                
+            &:focus, &:active {
+                -webkit-transform-origin: 50% 100%;
+                        transform-origin: 50% 100%;
+                -webkit-transform: rotateX(-180deg) rotateY(0deg) rotateZ(0deg) translateZ(1rem) translateY(100%) scale(1.2);
+                        transform: rotateX(-180deg) rotateY(0deg) rotateZ(0deg) translateZ(1rem) translateY(100%) scale(1.2);                
             }
             &:hover,
             &:focus {
@@ -247,7 +262,8 @@ a {
             &-front,
             &-back,
             &-under {
-                backface-visibility: hidden;
+                -webkit-backface-visibility: hidden;
+                        backface-visibility: hidden;
                 will-change: transform, scale;
                 &:after {
                     color: darken(black, 15%);
@@ -260,6 +276,7 @@ a {
             &:after,
             &:before {
                 position: absolute;
+                display: -ms-grid;
                 display: grid;
                 width: 100%;
                 height: 100%;
@@ -437,15 +454,14 @@ section {
                 height: 100%;
                 opacity: 0;
                 background: $dark-color-2;
-                -webkit-transition: all ease .5s;
-                -moz-transition: all ease .5s;
                 transition: all ease .5s;  
                 
                 .portfolio-hover-content {
                     position: absolute;
                     padding: 10%;
                     top: 50%;
-                    transform: translate(0, -50%);
+                    -webkit-transform: translate(0, -50%);
+                            transform: translate(0, -50%);
                     
                     .portfolio-title {
                         color: $light-color;
@@ -469,6 +485,7 @@ section {
 
 /*PORTFOLIO MODAL*/
 #lightbox {
+    display: -ms-grid;
     display: grid;
     position: fixed;
     padding: 2rem 1rem;
@@ -504,7 +521,8 @@ section {
         
         img {
             margin: auto;
-            object-fit: cover;
+            -o-object-fit: cover;
+               object-fit: cover;
             width: 100%;
         }
         
@@ -591,7 +609,9 @@ section {
     background: radial-gradient(circle, $dark-color -20%, $dark-color-2 120%);    
 
     .contacts {
+        display: -ms-grid;
         display: grid;
+        -ms-grid-columns: (1fr)[4];
         grid-template-columns: repeat(4, 1fr);
         width: 90%;
         max-width: 30rem;
@@ -625,11 +645,10 @@ section {
 /* ANIMATION MIXINS */
 @mixin transform($property) {
     -webkit-transform: $property;
-    -ms-transform: $property;
     transform: $property;
 }
 
-// FOUC fix
+/* FOUC fix*/
 html {
     visibility: visible;
     opacity: 1;
