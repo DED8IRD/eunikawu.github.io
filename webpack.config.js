@@ -64,11 +64,11 @@ module.exports = {
                         loader: 'image-webpack-loader',
                         options: {
                             pngquant: {
-                                quality: '40-65',
+                                quality: '50-75',
                                 speed: 4
                             },
                             mozjpeg: {
-                                quality: 35,
+                                quality: 40,
                                 progressive: true
                             },
                             enforce: 'pre'
