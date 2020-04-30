@@ -21,7 +21,7 @@
   "homepage": "https://github.com/DED8IRD/DED8IRD.github.io#readme",
   "dependencies": {
     "bootstrap": "^4.3.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "popper.js": "^1.15.0",
     "scrollreveal": "^4.0.5"
   },
